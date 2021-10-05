@@ -13,7 +13,7 @@ public class Team {
 
     private String teamName;
     private int teamRating;
-    private int points;
+    private Integer points;
     private int goalsScored;
     private int goalsConceded;
     private int wins;
@@ -26,7 +26,7 @@ public class Team {
         this.teamRating=teamRating;
     }
 
-    public Team(String teamName, int teamRating, int points, int goalsScored, int goalsConceded, int wins, int draws, int loses, int games) {
+    public Team(String teamName, int teamRating, Integer points, int goalsScored, int goalsConceded, int wins, int draws, int loses, int games) {
         this.teamName = teamName;
         this.teamRating = teamRating;
         this.points = points;
@@ -46,11 +46,11 @@ public class Team {
         return this.teamRating;
     }
 
-    public int getPoints() {
+    public Integer getPoints() {
         return points;
     }
 
-    public void setPoints(int points) {
+    public void setPoints(Integer points) {
         this.points = points;
     }
 
@@ -94,8 +94,16 @@ public class Team {
         this.loses = loses;
     }
 
+    public int getGames() {
+        return games;
+    }
+
+    public void setGames(int games) {
+        this.games = games;
+    }
+
     @Override
     public String toString() {
-        return teamName + " " + points;
+        return teamName + " | " + "Games: "+games+" | "+"Points: " +points + " | " + goalsScored +":"+goalsConceded + " | " + "W"+wins+"D"+draws+"L"+loses;
     }
 }

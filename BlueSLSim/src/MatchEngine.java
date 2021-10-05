@@ -75,6 +75,18 @@ public class MatchEngine {
 
             home.setLoses(home.getLoses() + 1);
         }
+
+        home.setGoalsScored(home.getGoalsScored()+result.homeGoals);
+        home.setGoalsConceded(home.getGoalsConceded()+result.awayGoals);
+        home.setGames(home.getGames()+1);
+
+        away.setGoalsScored(away.getGoalsScored()+result.awayGoals);
+        away.setGoalsConceded(away.getGoalsConceded()+result.homeGoals);
+        away.setGames(away.getGames()+1);
+
+
+
+
     }
 
     }
