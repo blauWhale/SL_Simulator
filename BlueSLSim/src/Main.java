@@ -10,13 +10,14 @@ public class Main {
         //System.out.println(result);
 
 
-        for(int i = 0;i<superLeagueTeams.size()-1;i++) {
-            for(int j=1;j<=superLeagueTeams.size()-1;j++){
+        for(int i = 0;i<=superLeagueTeams.size()-1;i++) {
+            for(int j=0;j<=superLeagueTeams.size()-1;j++){
                 if(i==j){
                    //skip
                 }
                 else {
                     matchEngine.calculateMatchDay(superLeagueTeams.get(i),superLeagueTeams.get(j));
+                    System.out.println(i+"VS"+j);
                 }
 
             }
