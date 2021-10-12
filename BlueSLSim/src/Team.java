@@ -12,7 +12,8 @@
 public class Team {
 
     private String teamName;
-    private int teamRating;
+    private int offensiveRating;
+    private int defensiveRating;
     private Integer points;
     private int goalsScored;
     private int goalsConceded;
@@ -21,29 +22,42 @@ public class Team {
     private int loses;
     private int games;
 
-    public Team(String teamName, int teamRating){
-        this.teamName=teamName;
-        this.teamRating=teamRating;
-    }
 
-    public Team(String teamName, int teamRating, Integer points, int goalsScored, int goalsConceded, int wins, int draws, int loses, int games) {
+    public Team(String teamName, int offensiveRating, int defensiveRating) {
         this.teamName = teamName;
-        this.teamRating = teamRating;
-        this.points = points;
-        this.goalsScored = goalsScored;
-        this.goalsConceded = goalsConceded;
-        this.wins = wins;
-        this.draws = draws;
-        this.loses = loses;
-        this.games = games;
+        this.offensiveRating = offensiveRating;
+        this.defensiveRating = defensiveRating;
+        this.points = 0;
+        this.goalsScored =0;
+        this.goalsConceded = 0;
+        this.wins = 0;
+        this.draws = 0;
+        this.loses = 0;
+        this.games = 0;
     }
 
-    public String getTeamName(){
-        return this.teamName;
+    public String getTeamName() {
+        return teamName;
     }
-    
-    public int getTeamRating(){
-        return this.teamRating;
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
+    public int getOffensiveRating() {
+        return offensiveRating;
+    }
+
+    public void setOffensiveRating(int offensiveRating) {
+        this.offensiveRating = offensiveRating;
+    }
+
+    public int getDefensiveRating() {
+        return defensiveRating;
+    }
+
+    public void setDefensiveRating(int defensiveRating) {
+        this.defensiveRating = defensiveRating;
     }
 
     public Integer getPoints() {
