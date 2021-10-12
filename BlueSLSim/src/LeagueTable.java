@@ -1,5 +1,3 @@
-import util.RandomHelper;
-
 import java.util.ArrayList;
 
 public class LeagueTable {
