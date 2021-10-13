@@ -8,12 +8,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
         LeagueTable leagueTable = new LeagueTable();
         MatchEngine matchEngine = new MatchEngine();
+        ArrayList<Team> superLeagueTeams = leagueTable.createLeague();
+        System.out.println("Choose your team:\n");
+        for (int team = 0; team < superLeagueTeams.size(); team++) {
+            System.out.println("["+(team+1)+"] " + superLeagueTeams.get(team).getTeamName().toString());
+        }
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+
         leagueTable.showLeagueTable(playRound(matchEngine,leagueTable));
 
 
@@ -21,7 +30,7 @@ public class Main {
 
 
     private static ArrayList<Team> playRound(MatchEngine matchEngine, LeagueTable leagueTable) {
-        ArrayList<Team> superLeagueTeams = leagueTable.createLeague();
+        ArrayList<Team> superLeagueTeams = leagueTable.getListOfTeams();
         for (int amountOfRounds = 0; amountOfRounds < 2; amountOfRounds++) {
             for (int i = 0; i <= superLeagueTeams.size() - 1; i++) {
                 for (int j = 0; j <= superLeagueTeams.size() - 1; j++) {
