@@ -24,14 +24,14 @@ public class MatchEngine {
         }
 
         for (int chances = 0; chances < getRandomNumberBetween(1,6); chances++) {
-            boolean goalScored = getRandomNumberBetween(homeOffensiveRatingOnDay, 20) > getRandomNumberBetween(awayDefensiveRatingOnDay, 20);
+            boolean goalScored = getRandomNumberBetween(homeOffensiveRatingOnDay, 10) > getRandomNumberBetween(awayDefensiveRatingOnDay, 10);
             if (goalScored) {
                 homeGoals++;
             }
         }
 
         for (int chances = 0; chances < getRandomNumberBetween(0,6); chances++) {
-            boolean goalScored = getRandomNumberBetween(awayOffensiveRatingOnDay, 20) > getRandomNumberBetween(homeDefensivRatingOnDay, 20);
+            boolean goalScored = getRandomNumberBetween(awayOffensiveRatingOnDay, 10) > getRandomNumberBetween(homeDefensivRatingOnDay, 10);
             if (goalScored) {
                 awayGoals++;
             }
