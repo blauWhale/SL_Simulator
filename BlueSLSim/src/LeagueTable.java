@@ -23,6 +23,7 @@ public class LeagueTable {
     }
 
     public void showLeagueTable(ArrayList<Team> listOfTeams){
+        sortLeagueTable(listOfTeams);
         for(int i = 0; i<=listOfTeams.size()-1;i++){
             System.out.println(  i+1 + ". " + listOfTeams.get(i));
         }

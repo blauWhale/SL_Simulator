@@ -10,19 +10,18 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
-
-
     public static void main(String[] args) {
+
         LeagueTable leagueTable = new LeagueTable();
         MatchEngine matchEngine = new MatchEngine();
-        uibuilder(matchEngine,leagueTable);
+        leagueTable.showLeagueTable(playRound(matchEngine,leagueTable));
 
 
     }
 
 
     private static ArrayList<Team> playRound(MatchEngine matchEngine, LeagueTable leagueTable) {
-        ArrayList<Team> superLeagueTeams = leagueTable.getListOfTeams();
+        ArrayList<Team> superLeagueTeams = leagueTable.createLeague();
         for (int amountOfRounds = 0; amountOfRounds < 2; amountOfRounds++) {
             for (int i = 0; i <= superLeagueTeams.size() - 1; i++) {
                 for (int j = 0; j <= superLeagueTeams.size() - 1; j++) {
@@ -61,7 +60,7 @@ public class Main {
 //    }
 
     public static void uibuilder(MatchEngine matchEngine, LeagueTable leagueTable) {
-        String selectedTeam;
+        final String[] selectedTeam = new String[1];
         ArrayList<Team> superLeagueTeams = leagueTable.createLeague();
         //Layout
         FlowLayout layout = new FlowLayout();
@@ -85,6 +84,7 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 JComboBox cb = (JComboBox) e.getSource();
                 String selectedItem = (String) cb.getSelectedItem();
+                selectedTeam[0] = selectedItem;
             }
         });
         teamlist.setSize(new Dimension(100, 100));
@@ -98,6 +98,7 @@ public class Main {
                 leagueTable.setListOfTeams(leagueTable.createLeague());
                 playRound(matchEngine,leagueTable);
                 leagueTable.showLeagueTable(leagueTable.sortLeagueTable(superLeagueTeams));
+                frame.add(new JLabel(selectedTeam[0]+ "is your Team") );
                 JTable table = tableBuilder(leagueTable.sortLeagueTable(superLeagueTeams));
                 frame.add(new JScrollPane(table),0);
                 frame.revalidate();
