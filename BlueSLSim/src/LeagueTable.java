@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class LeagueTable {
-
+    ArrayList<Team> listOfTeams = new ArrayList<>();
     public ArrayList<Team> createLeague(){
-        ArrayList<Team> listOfTeams = new ArrayList<>();
+        listOfTeams.removeAll(listOfTeams);
         listOfTeams.add(new Team("FC Zürich",7,5));
         listOfTeams.add(new Team("Grasshopper Club Zürich",5,6));
         listOfTeams.add(new Team("FC Lugano",4,5));
@@ -26,5 +26,13 @@ public class LeagueTable {
         for(int i = 0; i<=listOfTeams.size()-1;i++){
             System.out.println(  i+1 + ". " + listOfTeams.get(i));
         }
+    }
+
+    public ArrayList<Team> getListOfTeams() {
+        return listOfTeams;
+    }
+
+    public void setListOfTeams(ArrayList<Team> listOfTeams) {
+        this.listOfTeams = listOfTeams;
     }
 }
