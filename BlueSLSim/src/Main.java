@@ -18,12 +18,21 @@ public class Main {
         ArrayList<Team> superLeagueTeams = leagueTable.createLeague();
         System.out.println("Choose your team:\n");
         for (int team = 0; team < superLeagueTeams.size(); team++) {
-            System.out.println("["+(team+1)+"] " + superLeagueTeams.get(team).getTeamName().toString());
+            System.out.println("["+(team)+"] " + superLeagueTeams.get(team).getTeamName().toString());
         }
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
-
+        String team = superLeagueTeams.get(Integer.parseInt(input)).getTeamName();
         leagueTable.showLeagueTable(playRound(matchEngine,leagueTable));
+
+        int placement = 0;
+        for (int i = 0; i < leagueTable.listOfTeams.size(); i++) {
+            if(leagueTable.listOfTeams.get(i).getTeamName().equals(team)){
+                placement = leagueTable.listOfTeams.indexOf(leagueTable.listOfTeams.get(i)) + 1;
+            }
+        }
+        System.out.println(team + " placed " + placement +".");
+
 
 
     }
