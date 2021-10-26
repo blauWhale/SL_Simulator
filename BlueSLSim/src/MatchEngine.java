@@ -3,35 +3,32 @@ import java.util.Random;
 public class MatchEngine {
 
     public Result calculateMatchDay(Team home, Team away) {
-        int homeOffensiveRatingOnDay = home.getOffensiveRating();
-        int homeDefensivRatingOnDay = home.getDefensiveRating();
+        Rating homeRatingOnDay = new Rating(home.getRating().getOffensivRating(),home.getRating().getDefensivRating());
         int homeGoals = 0;
 
 
-        int awayOffensiveRatingOnDay = away.getOffensiveRating();
-        int awayDefensiveRatingOnDay = away.getDefensiveRating();
+        Rating awayRatingOnDay = new Rating(away.getRating().getOffensivRating(),away.getRating().getDefensivRating());
         int awayGoals = 0;
 
         if (0 == getRandomNumberBetween(0, 2)) {
-            homeOffensiveRatingOnDay = (home.getOffensiveRating() - getRandomNumberBetween(-2, +2));
-            homeDefensivRatingOnDay = (home.getDefensiveRating() - getRandomNumberBetween(-2, +2));
+            homeRatingOnDay.setOffensivRating(homeRatingOnDay.getOffensivRating() - getRandomNumberBetween(-2, +2));
+            homeRatingOnDay.setDefensivRating(homeRatingOnDay.getDefensivRating() - getRandomNumberBetween(-2, +2));
 
         }
         if (0 == getRandomNumberBetween(0, 2)) {
-            awayOffensiveRatingOnDay = (away.getOffensiveRating() - getRandomNumberBetween(-2, +2));
-            awayDefensiveRatingOnDay = (away.getDefensiveRating() - getRandomNumberBetween(-2, +2));
-
+            awayRatingOnDay.setOffensivRating(awayRatingOnDay.getOffensivRating() - getRandomNumberBetween(-2, +2));
+            awayRatingOnDay.setDefensivRating(awayRatingOnDay.getDefensivRating() - getRandomNumberBetween(-2, +2));
         }
 
         for (int chances = 0; chances < getRandomNumberBetween(1,6); chances++) {
-            boolean goalScored = getRandomNumberBetween(homeOffensiveRatingOnDay, 10) > getRandomNumberBetween(awayDefensiveRatingOnDay, 10);
+            boolean goalScored = getRandomNumberBetween(homeRatingOnDay.getOffensivRating(), 10) > getRandomNumberBetween(awayRatingOnDay.getDefensivRating(), 10);
             if (goalScored) {
                 homeGoals++;
             }
         }
 
         for (int chances = 0; chances < getRandomNumberBetween(0,6); chances++) {
-            boolean goalScored = getRandomNumberBetween(awayOffensiveRatingOnDay, 10) > getRandomNumberBetween(homeDefensivRatingOnDay, 10);
+            boolean goalScored = getRandomNumberBetween(awayRatingOnDay.getOffensivRating(), 10) > getRandomNumberBetween(homeRatingOnDay.getDefensivRating(), 10);
             if (goalScored) {
                 awayGoals++;
             }

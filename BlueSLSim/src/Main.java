@@ -48,6 +48,7 @@ public class Main {
     }
 
     private static void simOnce(LeagueTable leagueTable, MatchEngine matchEngine, String team) {
+        leagueTable.createLeague();
         leagueTable.showLeagueTable(playRound(matchEngine, leagueTable));
         int placement = 0;
         for (int i = 0; i < leagueTable.listOfTeams.size(); i++) {

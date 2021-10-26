@@ -1,8 +1,7 @@
 public class Team {
 
     private String teamName;
-    private int offensiveRating;
-    private int defensiveRating;
+    private Rating rating;
     private Integer points;
     private int goalsScored;
     private int goalsConceded;
@@ -12,10 +11,9 @@ public class Team {
     private int games;
 
 
-    public Team(String teamName, int offensiveRating, int defensiveRating) {
+    public Team(String teamName, Rating rating) {
         this.teamName = teamName;
-        this.offensiveRating = offensiveRating;
-        this.defensiveRating = defensiveRating;
+        this.rating = rating;
         this.points = 0;
         this.goalsScored =0;
         this.goalsConceded = 0;
@@ -33,20 +31,12 @@ public class Team {
         this.teamName = teamName;
     }
 
-    public int getOffensiveRating() {
-        return offensiveRating;
+    public Rating getRating() {
+        return rating;
     }
 
-    public void setOffensiveRating(int offensiveRating) {
-        this.offensiveRating = offensiveRating;
-    }
-
-    public int getDefensiveRating() {
-        return defensiveRating;
-    }
-
-    public void setDefensiveRating(int defensiveRating) {
-        this.defensiveRating = defensiveRating;
+    public void setRating(Rating rating) {
+        this.rating = rating;
     }
 
     public Integer getPoints() {
@@ -107,6 +97,7 @@ public class Team {
 
     @Override
     public String toString() {
-        return teamName + " | " + "Games: "+games+" | "+"Points: " +points + " | " + goalsScored +":"+goalsConceded + " | " + "W"+wins+"D"+draws+"L"+loses;
+        return teamName + " |" + "Games: "+games+" | "+"Points: " +points + " | " + goalsScored +":"+goalsConceded + " | " + (goalsScored-goalsConceded) + " | " +  "W"+wins+"D"+draws+"L"+loses;
     }
+
 }
