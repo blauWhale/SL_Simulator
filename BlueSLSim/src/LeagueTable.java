@@ -1,6 +1,7 @@
 import dnl.utils.text.table.TextTable;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class LeagueTable {
     ArrayList<Team> listOfTeams = new ArrayList<>();
@@ -29,13 +30,13 @@ public class LeagueTable {
         for(int i = 0; i<=listOfTeams.size()-1;i++){
             System.out.println(  i+1 + ". " + listOfTeams.get(i));
         }
-
         String[] columnNames = {
-                "First Name",
-                "Last Name",
-                "Sport",
-                "# of Years",
-                "Vegetarian"};
+                "Team Name",
+                "Games",
+                "Points",
+                "Goals",
+                "Goal Difference",
+                "Results"};
 
         Object[][] data = {
                 {"Kathy", "Smith",
