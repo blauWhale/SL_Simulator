@@ -12,29 +12,50 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
+        Scanner scanner = new Scanner(System.in);
         LeagueTable leagueTable = new LeagueTable();
         MatchEngine matchEngine = new MatchEngine();
         ArrayList<Team> superLeagueTeams = leagueTable.createLeague();
-        System.out.println("Choose your team:\n");
+        System.out.println("Choose your team:");
         for (int team = 0; team < superLeagueTeams.size(); team++) {
-            System.out.println("["+(team)+"] " + superLeagueTeams.get(team).getTeamName().toString());
+            System.out.println("[" + (team) + "] " + superLeagueTeams.get(team).getTeamName().toString());
         }
-        Scanner scanner = new Scanner(System.in);
+
         String input = scanner.nextLine();
         String team = superLeagueTeams.get(Integer.parseInt(input)).getTeamName();
-        leagueTable.showLeagueTable(playRound(matchEngine,leagueTable));
+        System.out.println("You chose " + team);
 
+        System.out.println("Would you like to ...");
+        int choice = -1;
+        do {
+            System.out.println(" Menu-Choice");
+            System.out.println(" [1] Simulate once");
+            System.out.println(" [2] Simulate an amount or until you win the league");
+            System.out.println(" [0] Close programm");
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+                switch (choice) {
+                    case 1 -> simOnce(leagueTable, matchEngine, team);
+                    case 2 -> simXAmount(matchEngine, leagueTable, team);
+                    case 0 -> System.out.println("Program closed");
+                    default -> throw new Exception();
+                }
+            } catch (Exception e) {
+                System.out.println("Please enter a number from 1-2 or 0 to close");
+            }
+        } while (choice != 0);
+        scanner.close();
+    }
+
+    private static void simOnce(LeagueTable leagueTable, MatchEngine matchEngine, String team) {
+        leagueTable.showLeagueTable(playRound(matchEngine, leagueTable));
         int placement = 0;
         for (int i = 0; i < leagueTable.listOfTeams.size(); i++) {
-            if(leagueTable.listOfTeams.get(i).getTeamName().equals(team)){
+            if (leagueTable.listOfTeams.get(i).getTeamName().equals(team)) {
                 placement = leagueTable.listOfTeams.indexOf(leagueTable.listOfTeams.get(i)) + 1;
             }
         }
-        System.out.println(team + " placed " + placement +".");
-
-
-
+        System.out.println(team + " placed " + placement + ".");
     }
 
 
@@ -54,28 +75,32 @@ public class Main {
             }
         }
 
-        return(superLeagueTeams);
+        return (superLeagueTeams);
     }
 
-//    private static void sim(MatchEngine matchEngine, ArrayList<Team> superLeagueTeams){
-//        int counter = 0;
-//        for(int i = 0; i < 25; i++){
-//            playRound(matchEngine,superLeagueTeams);
-//            playRound(matchEngine,superLeagueTeams);
-//            leagueTable.sortLeagueTable(superLeagueTeams);
-//            System.out.println(superLeagueTeams.get(0).getTeamName());
-//
-////            if(superLeagueTeams.get(0).getTeamName().equals("FC Luzern")){
-////                leagueTable.showLeagueTable(superLeagueTeams);
-////                System.out.println(counter);
-////                break;
-////            }
-////            else{
-////                counter++;
-////            }
-//        }
-//
-//    }
+    private static void simXAmount(MatchEngine matchEngine, LeagueTable leagueTable, String team) {
+        int counter = 0;
+        System.out.println("How many times should we simulate the league? (Sim will stop if you win the leauge)");
+        Scanner scanner = new Scanner(System.in);
+        int amount = Integer.parseInt(scanner.nextLine());
+        boolean winner = false;
+        for (int i = 0; i < amount; i++) {
+            leagueTable.createLeague();
+            leagueTable.sortLeagueTable(playRound(matchEngine, leagueTable));
+            if (leagueTable.listOfTeams.get(0).getTeamName().equals(team)) {
+                leagueTable.showLeagueTable(leagueTable.listOfTeams);
+                System.out.println("It took " + counter + " seasons to win the league");
+                winner = true;
+                break;
+            } else {
+                counter++;
+            }
+        }
+        if (!winner) {
+            System.out.println("Even after " + counter + " years, " + team + " didn't win the league!");
+        }
+
+    }
 
     public static void uibuilder(MatchEngine matchEngine, LeagueTable leagueTable) {
         final String[] selectedTeam = new String[1];
@@ -91,7 +116,6 @@ public class Main {
         JLabel label = new JLabel("Choose your Team: ",
                 footballIcon,
                 SwingConstants.CENTER);
-
 
 
         //Dropdown
@@ -114,11 +138,11 @@ public class Main {
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 leagueTable.setListOfTeams(leagueTable.createLeague());
-                playRound(matchEngine,leagueTable);
-                leagueTable.showLeagueTable(leagueTable.sortLeagueTable(superLeagueTeams));
-                frame.add(new JLabel(selectedTeam[0]+ "is your Team") );
-                JTable table = tableBuilder(leagueTable.sortLeagueTable(superLeagueTeams));
-                frame.add(new JScrollPane(table),0);
+                playRound(matchEngine, leagueTable);
+                leagueTable.showLeagueTable(superLeagueTeams);
+                frame.add(new JLabel(selectedTeam[0] + "is your Team"));
+                JTable table = tableBuilder(superLeagueTeams);
+                frame.add(new JScrollPane(table), 0);
                 frame.revalidate();
                 frame.validate();
                 frame.repaint();
