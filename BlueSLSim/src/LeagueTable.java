@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class LeagueTable {
-    ArrayList<Team> listOfTeams = new ArrayList<>();
+    private ArrayList<Team> listOfTeams = new ArrayList<>();
     public ArrayList<Team> createLeague(){
         listOfTeams.removeAll(listOfTeams);
         listOfTeams.add(new Team("FC Zürich",new Rating(7,5)));

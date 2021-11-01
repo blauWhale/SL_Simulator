@@ -11,7 +11,7 @@ class MatchEngineTest {
     @Test
     void calculateMatchDayStrongerTeam() {
         Result result = matchEngine.calculateMatchDay(blueTeam, redTeam);
-        Assertions.assertTrue(result.homeGoals > result.awayGoals);
+        Assertions.assertTrue(result.getHomeGoals() > result.getAwayGoals());
     }
 
 

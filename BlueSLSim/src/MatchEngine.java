@@ -40,32 +40,32 @@ public class MatchEngine {
     }
 
     public void awardPoints(Result result, Team home, Team away) {
-        if (result.homeGoals > result.awayGoals) {
+        if (result.getHomeGoals() > result.getAwayGoals()) {
             home.setPoints(home.getPoints() + 3);
             home.setWins(home.getWins() + 1);
 
             away.setLoses(away.getLoses() + 1);
         }
-        if (result.homeGoals == result.awayGoals) {
+        if (result.getHomeGoals() == result.getAwayGoals()) {
             home.setPoints(home.getPoints() + 1);
             home.setDraws(home.getDraws() + 1);
 
             away.setPoints(away.getPoints() + 1);
             away.setDraws(away.getDraws() + 1);
         }
-        if (result.homeGoals < result.awayGoals) {
+        if (result.getHomeGoals() < result.getAwayGoals()) {
             away.setPoints(away.getPoints() + 3);
             away.setWins(away.getWins() + 1);
 
             home.setLoses(home.getLoses() + 1);
         }
 
-        home.setGoalsScored(home.getGoalsScored() + result.homeGoals);
-        home.setGoalsConceded(home.getGoalsConceded() + result.awayGoals);
+        home.setGoalsScored(home.getGoalsScored() + result.getHomeGoals());
+        home.setGoalsConceded(home.getGoalsConceded() + result.getAwayGoals());
         home.setGames(home.getGames() + 1);
 
-        away.setGoalsScored(away.getGoalsScored() + result.awayGoals);
-        away.setGoalsConceded(away.getGoalsConceded() + result.homeGoals);
+        away.setGoalsScored(away.getGoalsScored() + result.getAwayGoals());
+        away.setGoalsConceded(away.getGoalsConceded() + result.getHomeGoals());
         away.setGames(away.getGames() + 1);
 
 

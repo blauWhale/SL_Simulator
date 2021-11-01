@@ -1,8 +1,3 @@
-import javax.swing.*;
-import javax.swing.table.TableColumn;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,17 +12,15 @@ public class Main {
             System.out.println("[" + (teamNumber) + "] " + superLeagueTeams.get(teamNumber).getTeamName().toString());
         }
         String team = null;
-        try{
+        try {
             String input = scanner.nextLine();
             team = superLeagueTeams.get(Integer.parseInt(input)).getTeamName();
             System.out.println("You chose " + team);
-        }
-        catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             throw new MyException("Choose one of the teams listed (0-9)");
 
 
-        }
-        catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             throw new MyException("Please type a number");
         }
         System.out.println("Would you like to ...");
@@ -56,9 +49,9 @@ public class Main {
         leagueTable.createLeague();
         leagueTable.showLeagueTable(playRound(matchEngine, leagueTable));
         int placement = 0;
-        for (int i = 0; i < leagueTable.listOfTeams.size(); i++) {
-            if (leagueTable.listOfTeams.get(i).getTeamName().equals(team)) {
-                placement = leagueTable.listOfTeams.indexOf(leagueTable.listOfTeams.get(i)) + 1;
+        for (int i = 0; i < leagueTable.getListOfTeams().size(); i++) {
+            if (leagueTable.getListOfTeams().get(i).getTeamName().equals(team)) {
+                placement = leagueTable.getListOfTeams().indexOf(leagueTable.getListOfTeams().get(i)) + 1;
             }
         }
         System.out.println(team + " placed " + placement + ".");
@@ -93,8 +86,8 @@ public class Main {
         for (int i = 0; i < amount; i++) {
             leagueTable.createLeague();
             leagueTable.sortLeagueTable(playRound(matchEngine, leagueTable));
-            if (leagueTable.listOfTeams.get(0).getTeamName().equals(team)) {
-                leagueTable.showLeagueTable(leagueTable.listOfTeams);
+            if (leagueTable.getListOfTeams().get(0).getTeamName().equals(team)) {
+                leagueTable.showLeagueTable(leagueTable.getListOfTeams());
                 System.out.println("It took " + counter + " seasons to win the league");
                 winner = true;
                 break;
@@ -103,12 +96,12 @@ public class Main {
             }
         }
         if (!winner) {
+            System.out.println("The league table in year " + counter);
+            leagueTable.showLeagueTable(leagueTable.getListOfTeams());
             System.out.println("Even after " + counter + " years, " + team + " didn't win the league!");
         }
 
     }
-
-
 
 
     public static String[] getStringArray(ArrayList<Team> arr) {
