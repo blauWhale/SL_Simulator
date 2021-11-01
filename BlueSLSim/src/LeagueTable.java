@@ -30,32 +30,6 @@ public class LeagueTable {
         for(int i = 0; i<=listOfTeams.size()-1;i++){
             System.out.println(  i+1 + ". " + listOfTeams.get(i));
         }
-        String[] columnNames = {
-                "Team Name",
-                "Games",
-                "Points",
-                "Goals",
-                "Goal Difference",
-                "Results"};
-
-        Object[][] data = {
-                {"Kathy", "Smith",
-                        "Snowboarding", 5, Boolean.FALSE},
-                {"John", "Doe",
-                        "Rowing", 3, Boolean.TRUE},
-                {"Sue", "Black",
-                        "Knitting", 2, Boolean.FALSE},
-                {"Jane", "White",
-                        "Speed reading", 20, Boolean.TRUE}, {"Joe", "Brown",
-                "Pool", 10, Boolean.FALSE}
-        };
-
-        TextTable tt = new TextTable(columnNames, data);
-// this adds the numbering on the left
-        tt.setAddRowNumbering(true);
-// sort by the first column
-        tt.setSort(0);
-        tt.printTable();
     }
 
     public ArrayList<Team> getListOfTeams() {

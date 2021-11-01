@@ -7,20 +7,29 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MyException {
         Scanner scanner = new Scanner(System.in);
         LeagueTable leagueTable = new LeagueTable();
         MatchEngine matchEngine = new MatchEngine();
         ArrayList<Team> superLeagueTeams = leagueTable.createLeague();
         System.out.println("Choose your team:");
-        for (int team = 0; team < superLeagueTeams.size(); team++) {
-            System.out.println("[" + (team) + "] " + superLeagueTeams.get(team).getTeamName().toString());
+        for (int teamNumber = 0; teamNumber < superLeagueTeams.size(); teamNumber++) {
+            System.out.println("[" + (teamNumber) + "] " + superLeagueTeams.get(teamNumber).getTeamName().toString());
         }
+        String team = null;
+        try{
+            String input = scanner.nextLine();
+            team = superLeagueTeams.get(Integer.parseInt(input)).getTeamName();
+            System.out.println("You chose " + team);
+        }
+        catch (IndexOutOfBoundsException e){
+            throw new MyException("Choose one of the teams listed (0-9)");
 
-        String input = scanner.nextLine();
-        String team = superLeagueTeams.get(Integer.parseInt(input)).getTeamName();
-        System.out.println("You chose " + team);
 
+        }
+        catch (NumberFormatException e){
+            throw new MyException("Please type a number");
+        }
         System.out.println("Would you like to ...");
         int choice = -1;
         do {
@@ -34,10 +43,10 @@ public class Main {
                     case 1 -> simOnce(leagueTable, matchEngine, team);
                     case 2 -> simXAmount(matchEngine, leagueTable, team);
                     case 0 -> System.out.println("Program closed");
-                    default -> throw new Exception();
+                    default -> throw new MyException("Choose one of the options in the menu (0-2)");
                 }
-            } catch (Exception e) {
-                System.out.println("Please enter a number from 1-2 or 0 to close");
+            } catch (MyException e) {
+                System.out.println(e.getMessage());
             }
         } while (choice != 0);
         scanner.close();
