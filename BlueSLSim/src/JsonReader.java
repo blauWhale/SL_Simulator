@@ -6,18 +6,21 @@ import org.json.simple.parser.ParseException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class JsonReader {
-    private static void readJsonFile() {
+    ArrayList<Team> teamArrayList = new ArrayList<>();
+    public ArrayList<Team> readJsonFile() {
         JSONParser jsonParser = new JSONParser();
-        try (FileReader reader = new FileReader("destinations.json")) {
+        try (FileReader reader = new FileReader("superLeagueTeams.json")) {
             //Read JSON file
             Object obj = jsonParser.parse(reader);
 
-            JSONArray destinationArray = (JSONArray) obj;
+            JSONArray teamArray = (JSONArray) obj;
 
-            destinationArray.forEach(destination -> parseTeamObject((JSONObject) destination));
+            teamArray.forEach(team -> parseTeamObject((JSONObject) team));
 
+            return teamArrayList;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -25,12 +28,13 @@ public class JsonReader {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        return teamArrayList;
     }
 
-    private static Team parseTeamObject(JSONObject object) {
+    public void parseTeamObject(JSONObject object) {
         //Get employee object within list
-        JSONObject teamObject = (JSONObject) object.get("destination");
-        Team team = new Team((String) teamObject.get("name"),new Rating((Integer) teamObject.get("offensivRating"),(Integer) teamObject.get("defensivRating")));
-        return team;
+        JSONObject teamObject = (JSONObject) object.get("team");
+        Team team = new Team((String) teamObject.get("name"),new Rating(Integer.parseInt((String) teamObject.get("offensivRating")) ,Integer.parseInt((String) teamObject.get("defensivRating"))));
+        teamArrayList.add(team);
     }
 }

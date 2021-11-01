@@ -6,6 +6,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         LeagueTable leagueTable = new LeagueTable();
         MatchEngine matchEngine = new MatchEngine();
+        menuPrinter(scanner, leagueTable, matchEngine);
+    }
+
+    private static void menuPrinter(Scanner scanner, LeagueTable leagueTable, MatchEngine matchEngine) throws MyException {
         ArrayList<Team> superLeagueTeams = leagueTable.createLeague();
         System.out.println("Choose your team:");
         for (int teamNumber = 0; teamNumber < superLeagueTeams.size(); teamNumber++) {

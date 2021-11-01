@@ -1,0 +1,72 @@
+[
+  {
+    "team": {
+      "name": "FC Zürich",
+      "offensivRating": "7",
+      "defensivRating": "5"
+    }
+  },
+  {
+    "team": {
+      "name": "Grasshopper Club Zürich",
+      "offensivRating": "5",
+      "defensivRating": "6"
+    }
+  },
+  {
+    "team": {
+      "name": "FC Lugano",
+      "offensivRating": "4",
+      "defensivRating": "5"
+    }
+  },
+  {
+    "team": {
+      "name": "FC Lausanne-Sport",
+      "offensivRating": "3",
+      "defensivRating": "3"
+    }
+  },
+  {
+    "team": {
+      "name": "FC St. Gallen",
+      "offensivRating": "4",
+      "defensivRating": "4"
+    }
+  },
+  {
+    "team": {
+      "name": "Servette FC",
+      "offensivRating": "5",
+      "defensivRating": "5"
+    }
+  },
+  {
+    "team": {
+      "name": "FC Sion",
+      "offensivRating": "4",
+      "defensivRating": "4"
+    }
+  },
+  {
+    "team": {
+      "name": "FC Luzern",
+      "offensivRating": "6",
+      "defensivRating": "6"
+    }
+  },
+  {
+    "team": {
+      "name": "FC Basel 1893",
+      "offensivRating": "7",
+      "defensivRating": "6"
+    }
+  },
+  {
+    "team": {
+      "name": "BSC Young Boys",
+      "offensivRating": "7",
+      "defensivRating": "7"
+    }
+  }
+]
