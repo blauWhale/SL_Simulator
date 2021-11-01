@@ -11,7 +11,7 @@ public class Main {
         for (int teamNumber = 0; teamNumber < superLeagueTeams.size(); teamNumber++) {
             System.out.println("[" + (teamNumber) + "] " + superLeagueTeams.get(teamNumber).getTeamName().toString());
         }
-        String team = null;
+        String team;
         try {
             String input = scanner.nextLine();
             team = superLeagueTeams.get(Integer.parseInt(input)).getTeamName();
@@ -104,18 +104,4 @@ public class Main {
     }
 
 
-    public static String[] getStringArray(ArrayList<Team> arr) {
-
-        // declaration and initialise String Array
-        String str[] = new String[arr.size()];
-
-        // ArrayList to Array Conversion
-        for (int j = 0; j < arr.size(); j++) {
-
-            // Assign each value to String array
-            str[j] = arr.get(j).getTeamName();
-        }
-
-        return str;
-    }
 }

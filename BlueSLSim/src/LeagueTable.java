@@ -5,6 +5,10 @@ import java.util.Arrays;
 
 public class LeagueTable {
     private ArrayList<Team> listOfTeams = new ArrayList<>();
+
+    /**
+     * @return Empty Super League Table
+     */
     public ArrayList<Team> createLeague(){
         listOfTeams.removeAll(listOfTeams);
         listOfTeams.add(new Team("FC Zürich",new Rating(7,5)));
@@ -20,11 +24,21 @@ public class LeagueTable {
         return listOfTeams;
     }
 
+    /**
+     * Used for end of the Season sorting of the Teams in the Table
+     * @param listOfTeams to Sort
+     * @return sorted Table
+     */
     public ArrayList<Team> sortLeagueTable(ArrayList<Team> listOfTeams){
         listOfTeams.sort(new Rule());
         return listOfTeams;
     }
 
+    /**
+     * Prints Table of sorted League Table
+     *
+     * @param listOfTeams
+     */
     public void showLeagueTable(ArrayList<Team> listOfTeams){
         sortLeagueTable(listOfTeams);
         for(int i = 0; i<=listOfTeams.size()-1;i++){

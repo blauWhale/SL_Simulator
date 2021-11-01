@@ -2,6 +2,12 @@ import java.util.Random;
 
 public class MatchEngine {
 
+    /**
+     * Calculates a Match between two Teams and returns the result
+     * @param home Team
+     * @param away Team
+     * @return a game Result
+     */
     public Result calculateMatchDay(Team home, Team away) {
         Rating homeRatingOnDay = new Rating(home.getRating().getOffensivRating(),home.getRating().getDefensivRating());
         int homeGoals = 0;
@@ -39,6 +45,13 @@ public class MatchEngine {
         return result;
     }
 
+    /**
+     * Awards Points to two Team given a result
+     *
+     * @param result
+     * @param home
+     * @param away
+     */
     public void awardPoints(Result result, Team home, Team away) {
         if (result.getHomeGoals() > result.getAwayGoals()) {
             home.setPoints(home.getPoints() + 3);
@@ -71,6 +84,11 @@ public class MatchEngine {
 
     }
 
+    /**
+     * @param min lowest Number possible
+     * @param max highest Number possible
+     * @return Random nummber
+     */
     public int getRandomNumberBetween(int min, int max) {
         Random random = new Random();
         return random.nextInt(max - min) + min;
