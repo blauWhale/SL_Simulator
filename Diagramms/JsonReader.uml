@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>JsonReader</OriginalElement>
+  <nodes>
+    <node x="647.5" y="353.0">MyException</node>
+    <node x="832.0" y="0.0">Rating</node>
+    <node x="841.0" y="249.0">JsonReader</node>
+    <node x="240.0" y="0.0">LeagueTable</node>
+    <node x="0.0" y="0.0">Team</node>
+    <node x="544.0" y="436.0">Rule</node>
+    <node x="240.0" y="249.0">Main</node>
+    <node x="635.0" y="249.0">java.lang.Exception</node>
+    <node x="240.0" y="436.0">MatchEngine</node>
+    <node x="613.0" y="0.0">Result</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="MyException" target="java.lang.Exception">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="539.5" y="324.5" />
+  <SelectedNodes>
+    <node>JsonReader</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
