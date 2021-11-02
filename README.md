@@ -7,11 +7,11 @@ gegenüberstellt. Mit vorgegebenen Werten wird von den einzelnen Spieltagen bis 
 ## Design
 #### Kick Off Class Diagram
 ![KlassenDiagramKickOff](Diagrams/KickOffClassDiagram.png)
-Nach recherchen und austausch mit dem Klassenlehrer Herr Pangri, zeichnete ich grob die wichtigsten Klassen in einem Klassendiagramm auf.
+<br>Nach recherchen und austausch mit dem Klassenlehrer Herr Pangri, zeichnete ich grob die wichtigsten Klassen in einem Klassendiagramm auf.
 
 #### Use Case Diagram
 ![UseCase](Diagrams/usecase.png)
-Mein Programm hat das Ziel die Liga zu simulieren und danach auszugeben, daher gibt es eigentlich nur einen Use Case.
+<br>Mein Programm hat das Ziel die Liga zu simulieren und danach auszugeben, daher gibt es eigentlich nur einen Use Case.
 Um auch die Frage zu beantworten, wie lange ein Team braucht um die Liga zu gewinnen, gibt es alternativ noch die Möglichkeit die Liga so lang zu simulieren, bis da Team an der Spitze ist.
 
 ## Planung & Umsetzung
