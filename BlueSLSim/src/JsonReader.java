@@ -3,6 +3,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -21,7 +22,7 @@ public class JsonReader {
      */
     public ArrayList<Team> readJsonFile() {
         JSONParser jsonParser = new JSONParser();
-        try (FileReader reader = new FileReader("superLeagueTeams.json")) {
+        try (FileReader reader = new FileReader("BlueSLSim/superLeagueTeams.json")) {
             //Read JSON file
             Object obj = jsonParser.parse(reader);
 
