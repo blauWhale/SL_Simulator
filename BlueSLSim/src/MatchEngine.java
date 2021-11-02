@@ -1,5 +1,8 @@
 import java.util.Random;
 
+/**
+ * Used to simulate matchdays and award points
+ */
 public class MatchEngine {
 
     /**

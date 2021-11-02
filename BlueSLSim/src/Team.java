@@ -1,3 +1,6 @@
+/**
+ * Simple Java Object to host all data for a Team
+ */
 public class Team {
 
     private String teamName;

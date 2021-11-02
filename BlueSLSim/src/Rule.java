@@ -1,6 +1,13 @@
 import java.util.Comparator;
 
 public class Rule implements Comparator<Team> {
+    /** Used to compare to teams and sort them by:
+     * 1.Points
+     * 2.Goal Difference
+     * @param t1 first Team to compare
+     * @param t2 second Team to compate
+     * @return outcome of comparison
+     */
     @Override
     public int compare(Team t1, Team t2) {
         if(t2.getPoints().equals(t1.getPoints())){

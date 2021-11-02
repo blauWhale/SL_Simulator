@@ -1,3 +1,6 @@
+/**
+ * Simple Java Object to persist a game result
+ */
 public class Result {
     private int homeGoals;
     private int awayGoals;

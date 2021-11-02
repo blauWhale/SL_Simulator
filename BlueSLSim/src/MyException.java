@@ -1,3 +1,6 @@
+/**
+ * Simple Exception Handeling Class for different Use cases
+ */
 public class MyException extends Exception{
         public MyException() {
         }
