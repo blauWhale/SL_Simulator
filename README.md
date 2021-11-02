@@ -4,17 +4,17 @@ Simulates the Super League<br>
 Der Super League Simulator ist eine Applikation, die alle 10 schweizer Fussballmannschaften
 gegenüberstellt. Mit vorgegebenen Werten wird von den einzelnen Spieltagen bis zur ganzen Season simuliert und dem User ausgegeben.
 
-##Design
-####Kick Off Class Diagram
+## Design
+#### Kick Off Class Diagram
 ![KlassenDiagramKickOff](Diagrams/KickOffClassDiagram.png)
 Nach recherchen und austausch mit dem Klassenlehrer Herr Pangri, zeichnete ich grob die wichtigsten Klassen in einem Klassendiagramm auf.
 
-####Use Case Diagram
+#### Use Case Diagram
 ![UseCase](Diagrams/usecase.png)
 Mein Programm hat das Ziel die Liga zu simulieren und danach auszugeben, daher gibt es eigentlich nur einen Use Case.
 Um auch die Frage zu beantworten, wie lange ein Team braucht um die Liga zu gewinnen, gibt es alternativ noch die Möglichkeit die Liga so lang zu simulieren, bis da Team an der Spitze ist.
 
-##Planung & Umsetzung
+## Planung & Umsetzung
 Der Kern des Projekts ist die Match Engine. Ich hatte verschiedene Varianten wie ich die Bewertung der Teams lösen konnte: <br>
 mit einem einzelnen Wert (z.B das Fifa Rating), mit mehreren Werten(z.B einen für Offensive, einen für Defensive), mit elf Werten pro Mannschaft representativ für die 11 Spieler.
 Ich stieg mit dem einzelen Wert ein. Den Wert entnahm ich gleich dem Fifa Spiel. Der beste Wert hatte YB mit 71, den schlechtesten Lausanne mit 66. <br>
@@ -33,13 +33,13 @@ Aber ein wenig Zufall musste auch dabei sein. Sonst hätten die schlechteren Tea
 Sobald die Match Engine so stand und diverse Resultate lieferte, konnte ich mich an die Details setzten.
 Ich nahm einen User Input in Form eines Lieblingsteams entgegen, gab die Möglichkeit die Liga so viel wie man will auf ein Mal zu simulieren und gab natürlich die Schlusstabelle in der Konsole aus.
 
-####Sequence Diagram
+#### Sequence Diagram
 ![SequenceDiagram](Diagrams/SequenceDiagram.png)
 
-####Class Diagram Final Product
+#### Class Diagram Final Product
 ![Class Diagram Final Product](Diagrams/ClassDiagramFinal.png)
 
-##Testing
+## Testing
 Beim Testing priorisierte ich die wichtigsten Methoden meines Programms: die Match Engine und die Ligatabelle<br>
 Ich beantwortete die wichtigsten Fragen: <br>
 Gewinnt in der Regel das stärke Team?<br>
@@ -50,8 +50,5 @@ Die Test waren Erfolgreich und bestätigten ein sauberes Arbeiten.
 
 <br>
 
-##Fazit
+## Fazit
 Die Arbeit an diesem Projekt hat mir grossen Spass bereitet. Besonders das Anpassen der Daten und darauf die Simulation wieder und wieder laufen zu lassen war sehr Spannend.
-
-
-
