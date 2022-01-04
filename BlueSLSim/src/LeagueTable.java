@@ -1,12 +1,13 @@
-import dnl.utils.text.table.TextTable;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 
+/**
+ * Used for creating, altering and sorting the league table
+ */
 public class LeagueTable {
     private ArrayList<Team> listOfTeams = new ArrayList<>();
     private JsonReader jsonReader = new JsonReader();
     /**
+     * Reads a JSON File of Teams and creates a league for them
      * @return Empty Super League Table
      */
     public ArrayList<Team> createLeague(){

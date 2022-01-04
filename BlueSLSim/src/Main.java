@@ -1,7 +1,15 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Main Class and first point of contact for the user
+ */
 public class Main {
+    /**
+     * Main methode of the Super League Simulator
+     * @param args
+     * @throws MyException
+     */
     public static void main(String[] args) throws MyException {
         Scanner scanner = new Scanner(System.in);
         LeagueTable leagueTable = new LeagueTable();
@@ -9,6 +17,14 @@ public class Main {
         menuPrinter(scanner, leagueTable, matchEngine);
     }
 
+    /**
+     * Prints the Menu and takes care of user Input
+     *
+     * @param scanner Scanner to read user input
+     * @param leagueTable Table to alter during matchdays
+     * @param matchEngine matchEngine to use for matchdays
+     * @throws MyException
+     */
     private static void menuPrinter(Scanner scanner, LeagueTable leagueTable, MatchEngine matchEngine) throws MyException {
         ArrayList<Team> superLeagueTeams = leagueTable.createLeague();
         System.out.println("Choose your team:");
@@ -49,6 +65,14 @@ public class Main {
         scanner.close();
     }
 
+    /**
+     * Simulates the Super League season once complete
+     * Prints your Teams standing at the end of the season
+     *
+     * @param leagueTable
+     * @param matchEngine
+     * @param team
+     */
     private static void simOnce(LeagueTable leagueTable, MatchEngine matchEngine, String team) {
         leagueTable.createLeague();
         leagueTable.showLeagueTable(playRound(matchEngine, leagueTable));
@@ -62,6 +86,13 @@ public class Main {
     }
 
 
+    /**
+     * Simulates the Super League season once complete
+     *
+     * @param matchEngine
+     * @param leagueTable
+     * @return an altered Arraylist of Teams, after an completed season
+     */
     private static ArrayList<Team> playRound(MatchEngine matchEngine, LeagueTable leagueTable) {
         ArrayList<Team> superLeagueTeams = leagueTable.getListOfTeams();
         for (int amountOfRounds = 0; amountOfRounds < 2; amountOfRounds++) {
@@ -81,6 +112,14 @@ public class Main {
         return (superLeagueTeams);
     }
 
+    /**
+     * Simulates the Super League an X amount of Times after user input
+     * Stops when selected Team won the league
+     *
+     * @param matchEngine
+     * @param leagueTable
+     * @param team
+     */
     private static void simXAmount(MatchEngine matchEngine, LeagueTable leagueTable, String team) {
         int counter = 0;
         System.out.println("How many times should we simulate the league? (Sim will stop if you win the leauge)");

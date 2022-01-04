@@ -1,3 +1,6 @@
+/**
+ * A Simple Java Object to persist a team's Rating
+ */
 public class Rating {
     private int offensivRating;
     private int defensivRating;
