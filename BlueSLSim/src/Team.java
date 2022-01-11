@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 /**
  * Simple Java Object to host all data for a Team
  */
@@ -12,6 +15,7 @@ public class Team {
     private int draws;
     private int loses;
     private int games;
+    private ArrayList<Player> players;
 
 
     public Team(String teamName, Rating rating) {
@@ -96,6 +100,14 @@ public class Team {
 
     public void setGames(int games) {
         this.games = games;
+    }
+
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(ArrayList<Player> players) {
+        this.players = players;
     }
 
     @Override
