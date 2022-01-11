@@ -3,7 +3,11 @@
     "team": {
       "name": "FC Zürich",
       "offensivRating": "7",
-      "defensivRating": "5"
+      "defensivRating": "5",
+      "players":{
+        "Jonas": {"offensivRating": "10", "defensivRating": "10"},
+        "Damian": {"offensivRating": "10", "defensivRating": "10"}
+      }
     }
   },
   {
