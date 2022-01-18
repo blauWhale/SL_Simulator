@@ -5,6 +5,10 @@ class MatchEngineTest {
     MatchEngine matchEngine = new MatchEngine();
     Team blueTeam = new Team("Strong FC",new Rating(7,7));
     Team redTeam = new Team("Weak United",new Rating(2,2));
+    Midfielder blueMidfielder = new Midfielder("Jack Blue", new Rating(9,9),"Midfielder");
+    Striker blueStriker = new Striker("John Blue", new Rating(9,9),"Striker");
+    Defender redDefender = new Defender("Garry Red", new Rating (2,2),"Defender");
+    Goalkeeper redGoalkeeper = new Goalkeeper("Tyler Red", new Rating(2,2),"Goalkeeper");
 
 
 

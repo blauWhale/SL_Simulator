@@ -1,7 +1,7 @@
 public class Goalkeeper extends Player{
 
-    public Goalkeeper(String name, Rating rating) {
-        super(name, rating);
+    public Goalkeeper(String name, Rating rating, String position) {
+        super(name, rating, position);
     }
 
     public boolean save(){

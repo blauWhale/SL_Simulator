@@ -1,10 +1,13 @@
 public class Striker extends Player {
-    public Striker(String name, Rating rating) {
-        super(name, rating);
+    RandomHelper randomHelper = new RandomHelper();
+
+    public Striker(String name, Rating rating, String position) {
+        super(name, rating, position);
     }
 
-    public boolean shot() {
-        return this.getRating().getOffensivRating() >= 5;
+    public boolean scoreGoal(Rating opponentRating) {
+        return randomHelper.getRandomNumberBetween(this.getRating().getOffensivRating(), 10) >= randomHelper.getRandomNumberBetween(opponentRating.getDefensivRating(), 10);
+
     }
 
     public boolean dribbel() {

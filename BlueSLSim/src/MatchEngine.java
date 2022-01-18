@@ -1,9 +1,8 @@
-import java.util.Random;
-
 /**
  * Used to simulate matchdays and award points
  */
 public class MatchEngine {
+    RandomHelper randomHelper = new RandomHelper();
 
     /**
      * Calculates a Match between two Teams and returns the result
@@ -19,26 +18,44 @@ public class MatchEngine {
         Rating awayRatingOnDay = new Rating(away.getRating().getOffensivRating(),away.getRating().getDefensivRating());
         int awayGoals = 0;
 
-        if (0 == getRandomNumberBetween(0, 2)) {
-            homeRatingOnDay.setOffensivRating(homeRatingOnDay.getOffensivRating() - getRandomNumberBetween(-2, +2));
-            homeRatingOnDay.setDefensivRating(homeRatingOnDay.getDefensivRating() - getRandomNumberBetween(-2, +2));
+        if (0 == randomHelper.getRandomNumberBetween(0, 2)) {
+            homeRatingOnDay.setOffensivRating(homeRatingOnDay.getOffensivRating() - randomHelper.getRandomNumberBetween(-2, +2));
+            homeRatingOnDay.setDefensivRating(homeRatingOnDay.getDefensivRating() - randomHelper.getRandomNumberBetween(-2, +2));
 
         }
-        if (0 == getRandomNumberBetween(0, 2)) {
-            awayRatingOnDay.setOffensivRating(awayRatingOnDay.getOffensivRating() - getRandomNumberBetween(-2, +2));
-            awayRatingOnDay.setDefensivRating(awayRatingOnDay.getDefensivRating() - getRandomNumberBetween(-2, +2));
+        if (0 == randomHelper.getRandomNumberBetween(0, 2)) {
+            awayRatingOnDay.setOffensivRating(awayRatingOnDay.getOffensivRating() - randomHelper.getRandomNumberBetween(-2, +2));
+            awayRatingOnDay.setDefensivRating(awayRatingOnDay.getDefensivRating() - randomHelper.getRandomNumberBetween(-2, +2));
         }
 
-        for (int chances = 0; chances < getRandomNumberBetween(1,6); chances++) {
-            boolean goalScored = getRandomNumberBetween(homeRatingOnDay.getOffensivRating(), 10) > getRandomNumberBetween(awayRatingOnDay.getDefensivRating(), 10);
-            if (goalScored) {
+        //Chances Home Team
+        for (int chances = 0; chances < randomHelper.getRandomNumberBetween(1,6); chances++) {
+            boolean homeGoalScored = false;
+            Midfielder homeMidfielder = (Midfielder) home.getPlayers().get(randomHelper.getRandomNumberBetween(5,8));
+            Defender awayDefender = (Defender) away.getPlayers().get(randomHelper.getRandomNumberBetween(1,4));
+            Striker homeStriker = (Striker) home.getPlayers().get(randomHelper.getRandomNumberBetween(9,10));
+            Goalkeeper awayGoalkeeper = (Goalkeeper) away.getPlayers().get(0);
+            if((homeMidfielder.pass(awayDefender.getRating()))){
+                homeGoalScored = homeStriker.scoreGoal(awayGoalkeeper.getRating());
+            }
+            //boolean goalScored = randomHelper.getRandomNumberBetween(homeRatingOnDay.getOffensivRating(), 10) > randomHelper.getRandomNumberBetween(awayRatingOnDay.getDefensivRating(), 10);
+            if (homeGoalScored) {
                 homeGoals++;
             }
         }
 
-        for (int chances = 0; chances < getRandomNumberBetween(0,6); chances++) {
-            boolean goalScored = getRandomNumberBetween(awayRatingOnDay.getOffensivRating(), 10) > getRandomNumberBetween(homeRatingOnDay.getDefensivRating(), 10);
-            if (goalScored) {
+        //Chances Away Team
+        for (int chances = 0; chances < randomHelper.getRandomNumberBetween(0,6); chances++) {
+            boolean awayGoalScored = false;
+            Midfielder awayMidfielder = (Midfielder) away.getPlayers().get(randomHelper.getRandomNumberBetween(5,8));
+            Defender homeDefender = (Defender) home.getPlayers().get(randomHelper.getRandomNumberBetween(1,4));
+            Striker awayStriker = (Striker) away.getPlayers().get(randomHelper.getRandomNumberBetween(9,10));
+            Goalkeeper homeGoalkeeper = (Goalkeeper) home.getPlayers().get(0);
+            if((awayMidfielder.pass(homeDefender.getRating()))){
+                awayGoalScored = awayStriker.scoreGoal(homeGoalkeeper.getRating());
+            }
+           // boolean goalScored = randomHelper.getRandomNumberBetween(awayRatingOnDay.getOffensivRating(), 10) > randomHelper.getRandomNumberBetween(homeRatingOnDay.getDefensivRating(), 10);
+            if (awayGoalScored) {
                 awayGoals++;
             }
         }
@@ -87,15 +104,6 @@ public class MatchEngine {
 
     }
 
-    /**
-     * @param min lowest Number possible
-     * @param max highest Number possible
-     * @return Random nummber
-     */
-    public int getRandomNumberBetween(int min, int max) {
-        Random random = new Random();
-        return random.nextInt(max - min) + min;
-    }
 
 }
 

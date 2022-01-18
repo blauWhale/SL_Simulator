@@ -1,9 +1,12 @@
 public class Midfielder extends Player{
-    public Midfielder(String name, Rating rating) {
-        super(name, rating);
+    RandomHelper randomHelper = new RandomHelper();
+
+    public Midfielder(String name, Rating rating, String position) {
+        super(name, rating, position);
     }
-    public boolean pass(){
-        return this.getRating().getOffensivRating() >= 5;
+
+    public boolean pass(Rating opponentRating){
+        return randomHelper.getRandomNumberBetween(this.getRating().getOffensivRating(), 10) >= randomHelper.getRandomNumberBetween(opponentRating.getDefensivRating(), 10);
     }
 
     public boolean tackle(){

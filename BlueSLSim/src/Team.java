@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -108,6 +107,10 @@ public class Team {
 
     public void setPlayers(ArrayList<Player> players) {
         this.players = players;
+    }
+
+    public void addPlayer(Player player){
+        players.add(player);
     }
 
     @Override

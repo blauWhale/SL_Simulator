@@ -15,6 +15,7 @@ import java.util.List;
  */
 public class JsonReader {
     ArrayList<Team> teamArrayList = new ArrayList<>();
+    ArrayList<Player> playerArrayList = new ArrayList<>();
 
     /**
      * Reads a Json File
@@ -23,13 +24,13 @@ public class JsonReader {
      */
     public ArrayList<Team> readJsonFile() {
         JSONParser jsonParser = new JSONParser();
-        try (FileReader reader = new FileReader("BlueSLSim/json.json")) {
+        try (FileReader reader = new FileReader("./superLeagueTeams.json")) {
             //Read JSON file
             Object obj = jsonParser.parse(reader);
 
-            JSONArray teamArray = (JSONArray) obj;
 
-            parseJSONString(teamArray.toJSONString());
+            parseTeamObject((JSONObject) obj);
+//            parseJSONString(teamArray.toJSONString());
             return teamArrayList;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -43,35 +44,35 @@ public class JsonReader {
         return teamArrayList;
     }
 
+    public void parseTeamObject(JSONObject object) {
 
-    /**
-     * Parser for Jsonobjects read by a JsonReader
-     *
-     * Adds the objects to an Arraylist
-     *
-     * param object JsonObject of anykind
-     */
-    public static List parseJSONString(String jsonStr) throws Exception {
-        List<String> keyList = new ArrayList<String>();
-        JSONObject authorJsonObj = (JSONObject) new JSONParser().parse(jsonStr);
-
-        JSONArray teamsJsonArr = (JSONArray)authorJsonObj.get("teams");
+        JSONArray teamsJsonArr = (JSONArray)object.get("teams");
         for (Object o : teamsJsonArr) {
             JSONObject teamsJsonObj = (JSONObject) o;
-            String isMulti = (String) teamsJsonObj.get("IsMulti");
-            String defensivRating = "" + teamsJsonObj.get("defensivRating");
-            String name = (String) teamsJsonObj.get("name");
-            String offensivRating = "" + teamsJsonObj.get("offensivRating");
+            Team team = new Team((String) teamsJsonObj.get("name"),new Rating(Integer.parseInt((String) teamsJsonObj.get("offensivRating")) ,Integer.parseInt((String) teamsJsonObj.get("defensivRating"))));
+            teamArrayList.add(team);
             JSONArray playersJsonArr = (JSONArray) teamsJsonObj.get("players");
-            for (Object value : playersJsonArr) {
-                JSONObject playersJsonObj = (JSONObject) value;
-                String isMultiOf = (String) playersJsonObj.get("IsMulti");
-                String defensivRatingOf = "" + playersJsonObj.get("defensivRating");
-                String nameOf = (String) playersJsonObj.get("name");
-                String offensivRatingOf = "" + playersJsonObj.get("offensivRating");
-                String position = (String) playersJsonObj.get("position");
+            for (Object oPlayer : playersJsonArr) {
+                JSONObject playerJsonObj = (JSONObject) oPlayer;
+                if(playerJsonObj.get("position").equals("Goalkeeper")){
+                    Goalkeeper goalkeeper = new Goalkeeper((String) playerJsonObj.get("name"),new Rating(Integer.parseInt((String) teamsJsonObj.get("offensivRating")) ,Integer.parseInt((String) teamsJsonObj.get("defensivRating"))),(String) playerJsonObj.get("position"));
+                    playerArrayList.add(goalkeeper);
+                }
+                if(playerJsonObj.get("position").equals("Defender")){
+                    Defender defender = new Defender((String) playerJsonObj.get("name"),new Rating(Integer.parseInt((String) teamsJsonObj.get("offensivRating")) ,Integer.parseInt((String) teamsJsonObj.get("defensivRating"))), (String) playerJsonObj.get("position"));
+                    playerArrayList.add(defender);
+                }
+                if(playerJsonObj.get("position").equals("Midfielder")){
+                    Midfielder midfielder = new Midfielder((String) playerJsonObj.get("name"),new Rating(Integer.parseInt((String) teamsJsonObj.get("offensivRating")) ,Integer.parseInt((String) teamsJsonObj.get("defensivRating"))), (String) playerJsonObj.get("position"));
+                    playerArrayList.add(midfielder);
+                }
+                if(playerJsonObj.get("position").equals("Striker")){
+                    Striker striker = new Striker((String) playerJsonObj.get("name"),new Rating(Integer.parseInt((String) teamsJsonObj.get("offensivRating")) ,Integer.parseInt((String) teamsJsonObj.get("defensivRating"))), (String) playerJsonObj.get("position"));
+                    playerArrayList.add(striker);
+                }
+            team.setPlayers(playerArrayList);
             }
         }
-        return keyList;
+
     }
 }
