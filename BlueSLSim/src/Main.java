@@ -8,9 +8,9 @@ public class Main {
     /**
      * Main methode of the Super League Simulator
      * @param args
-     * @throws MyException
+     * @throws MenuException
      */
-    public static void main(String[] args) throws MyException {
+    public static void main(String[] args) throws MenuException {
         Scanner scanner = new Scanner(System.in);
         LeagueTable leagueTable = new LeagueTable();
         MatchEngine matchEngine = new MatchEngine();
@@ -23,9 +23,9 @@ public class Main {
      * @param scanner Scanner to read user input
      * @param leagueTable Table to alter during matchdays
      * @param matchEngine matchEngine to use for matchdays
-     * @throws MyException
+     * @throws MenuException
      */
-    private static void menuPrinter(Scanner scanner, LeagueTable leagueTable, MatchEngine matchEngine) throws MyException {
+    private static void menuPrinter(Scanner scanner, LeagueTable leagueTable, MatchEngine matchEngine) throws MenuException {
         ArrayList<Team> superLeagueTeams = leagueTable.createLeague();
         System.out.println("Choose your team:");
         for (int teamNumber = 0; teamNumber < superLeagueTeams.size(); teamNumber++) {
@@ -37,11 +37,11 @@ public class Main {
             team = superLeagueTeams.get(Integer.parseInt(input)).getTeamName();
             System.out.println("You chose " + team);
         } catch (IndexOutOfBoundsException e) {
-            throw new MyException("Choose one of the teams listed (0-9)");
+            throw new MenuException("Choose one of the teams listed (0-9)");
 
 
         } catch (NumberFormatException e) {
-            throw new MyException("Please type a number");
+            throw new MenuException("Please type a number");
         }
         System.out.println("Would you like to ...");
         int choice = -1;
@@ -56,9 +56,9 @@ public class Main {
                     case 1 -> simOnce(leagueTable, matchEngine, team);
                     case 2 -> simXAmount(matchEngine, leagueTable, team);
                     case 0 -> System.out.println("Program closed");
-                    default -> throw new MyException("Choose one of the options in the menu (0-2)");
+                    default -> throw new MenuException("Choose one of the options in the menu (0-2)");
                 }
-            } catch (MyException e) {
+            } catch (MenuException e) {
                 System.out.println(e.getMessage());
             }
         } while (choice != 0);

@@ -30,7 +30,6 @@ public class JsonReader {
 
 
             parseTeamObject((JSONObject) obj);
-//            parseJSONString(teamArray.toJSONString());
             return teamArrayList;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -44,7 +43,7 @@ public class JsonReader {
         return teamArrayList;
     }
 
-    public void parseTeamObject(JSONObject object) {
+    public void parseTeamObject(JSONObject object) throws JSONException {
 
         JSONArray teamsJsonArr = (JSONArray)object.get("teams");
         for (Object o : teamsJsonArr) {
@@ -69,6 +68,9 @@ public class JsonReader {
                 if(playerJsonObj.get("position").equals("Striker")){
                     Striker striker = new Striker((String) playerJsonObj.get("name"),new Rating(Integer.parseInt((String) teamsJsonObj.get("offensivRating")) ,Integer.parseInt((String) teamsJsonObj.get("defensivRating"))), (String) playerJsonObj.get("position"));
                     playerArrayList.add(striker);
+                }
+                else{
+                    throw new JSONException();
                 }
             team.setPlayers(playerArrayList);
             }
