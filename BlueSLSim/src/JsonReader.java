@@ -15,7 +15,6 @@ import java.util.List;
  */
 public class JsonReader {
     ArrayList<Team> teamArrayList = new ArrayList<>();
-    ArrayList<Player> playerArrayList = new ArrayList<>();
 
     /**
      * Reads a Json File
@@ -50,6 +49,7 @@ public class JsonReader {
             JSONObject teamsJsonObj = (JSONObject) o;
             Team team = new Team((String) teamsJsonObj.get("name"),new Rating(Integer.parseInt((String) teamsJsonObj.get("offensivRating")) ,Integer.parseInt((String) teamsJsonObj.get("defensivRating"))));
             teamArrayList.add(team);
+            ArrayList<Player> playerArrayList = new ArrayList<>();
             JSONArray playersJsonArr = (JSONArray) teamsJsonObj.get("players");
             for (Object oPlayer : playersJsonArr) {
                 JSONObject playerJsonObj = (JSONObject) oPlayer;
@@ -70,7 +70,7 @@ public class JsonReader {
                     playerArrayList.add(striker);
                 }
                 else{
-                    throw new JSONException();
+                   // throw new JSONException();
                 }
             team.setPlayers(playerArrayList);
             }

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Used to simulate matchdays and award points
  */
@@ -11,21 +13,30 @@ public class MatchEngine {
      * @return a game Result
      */
     public Result calculateMatchDay(Team home, Team away) {
-        Rating homeRatingOnDay = new Rating(home.getRating().getOffensivRating(),home.getRating().getDefensivRating());
+        ArrayList<Player> homeTeamOnDay = new ArrayList<>();
+        for(Player homePlayer: home.getPlayers()){
+            homeTeamOnDay.add(new Player(homePlayer.getName(),homePlayer.getRating(),homePlayer.getPosition()));
+        }
         int homeGoals = 0;
 
 
-        Rating awayRatingOnDay = new Rating(away.getRating().getOffensivRating(),away.getRating().getDefensivRating());
-        int awayGoals = 0;
+        ArrayList<Player> awayTeamOnDay = new ArrayList<>();
+        for(Player awayPlayer: away.getPlayers()){
+            awayTeamOnDay.add(new Player(awayPlayer.getName(),awayPlayer.getRating(),awayPlayer.getPosition()));
+        }int awayGoals = 0;
 
-        if (0 == randomHelper.getRandomNumberBetween(0, 2)) {
-            homeRatingOnDay.setOffensivRating(homeRatingOnDay.getOffensivRating() - randomHelper.getRandomNumberBetween(-2, +2));
-            homeRatingOnDay.setDefensivRating(homeRatingOnDay.getDefensivRating() - randomHelper.getRandomNumberBetween(-2, +2));
 
+
+        for(Player playerOnDay: homeTeamOnDay){
+            if (0 == randomHelper.getRandomNumberBetween(0, 2)) {
+                playerOnDay.setRating(new Rating (playerOnDay.getRating().getOffensivRating() - randomHelper.getRandomNumberBetween(-2, +2), playerOnDay.getRating().getDefensivRating() - randomHelper.getRandomNumberBetween(-2, +2)));
+            }
         }
-        if (0 == randomHelper.getRandomNumberBetween(0, 2)) {
-            awayRatingOnDay.setOffensivRating(awayRatingOnDay.getOffensivRating() - randomHelper.getRandomNumberBetween(-2, +2));
-            awayRatingOnDay.setDefensivRating(awayRatingOnDay.getDefensivRating() - randomHelper.getRandomNumberBetween(-2, +2));
+
+        for(Player playerOnDay: awayTeamOnDay){
+            if (0 == randomHelper.getRandomNumberBetween(0, 2)) {
+                playerOnDay.setRating(new Rating (playerOnDay.getRating().getOffensivRating() - randomHelper.getRandomNumberBetween(-2, +2), playerOnDay.getRating().getDefensivRating() - randomHelper.getRandomNumberBetween(-2, +2)));
+            }
         }
 
         //Chances Home Team
@@ -38,7 +49,6 @@ public class MatchEngine {
             if((homeMidfielder.pass(awayDefender.getRating()))){
                 homeGoalScored = homeStriker.scoreGoal(awayGoalkeeper.getRating());
             }
-            //boolean goalScored = randomHelper.getRandomNumberBetween(homeRatingOnDay.getOffensivRating(), 10) > randomHelper.getRandomNumberBetween(awayRatingOnDay.getDefensivRating(), 10);
             if (homeGoalScored) {
                 homeGoals++;
             }
@@ -54,7 +64,6 @@ public class MatchEngine {
             if((awayMidfielder.pass(homeDefender.getRating()))){
                 awayGoalScored = awayStriker.scoreGoal(homeGoalkeeper.getRating());
             }
-           // boolean goalScored = randomHelper.getRandomNumberBetween(awayRatingOnDay.getOffensivRating(), 10) > randomHelper.getRandomNumberBetween(homeRatingOnDay.getDefensivRating(), 10);
             if (awayGoalScored) {
                 awayGoals++;
             }
