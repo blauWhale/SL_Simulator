@@ -1,5 +1,8 @@
 import java.util.Random;
 
+/**
+ * Class to be used where ever a Random number is needed
+ */
 public class RandomHelper {
 
     /**

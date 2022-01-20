@@ -7,14 +7,13 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 
 /**
  * A JsonReader for a Teamsheet
  */
 public class JsonReader {
-    ArrayList<Team> teamArrayList = new ArrayList<>();
+    private ArrayList<Team> teamArrayList = new ArrayList<>();
 
     /**
      * Reads a Json File
@@ -42,7 +41,12 @@ public class JsonReader {
         return teamArrayList;
     }
 
-    public void parseTeamObject(JSONObject object) throws JSONException {
+    /**
+     * Methode to get Teams and their players from a JSON Files
+     * @param object -> Json file to read
+     * @throws JSONIllegalPlayerPositionException -> if Typo in Position of Player Exception will be thrown
+     */
+    public void parseTeamObject(JSONObject object) throws JSONIllegalPlayerPositionException {
 
         JSONArray teamsJsonArr = (JSONArray)object.get("teams");
         for (Object o : teamsJsonArr) {
@@ -53,24 +57,25 @@ public class JsonReader {
             JSONArray playersJsonArr = (JSONArray) teamsJsonObj.get("players");
             for (Object oPlayer : playersJsonArr) {
                 JSONObject playerJsonObj = (JSONObject) oPlayer;
-                if(playerJsonObj.get("position").equals("Goalkeeper")){
-                    Goalkeeper goalkeeper = new Goalkeeper((String) playerJsonObj.get("name"),new Rating(Integer.parseInt((String) teamsJsonObj.get("offensivRating")) ,Integer.parseInt((String) teamsJsonObj.get("defensivRating"))),(String) playerJsonObj.get("position"));
-                    playerArrayList.add(goalkeeper);
-                }
-                if(playerJsonObj.get("position").equals("Defender")){
-                    Defender defender = new Defender((String) playerJsonObj.get("name"),new Rating(Integer.parseInt((String) teamsJsonObj.get("offensivRating")) ,Integer.parseInt((String) teamsJsonObj.get("defensivRating"))), (String) playerJsonObj.get("position"));
-                    playerArrayList.add(defender);
-                }
-                if(playerJsonObj.get("position").equals("Midfielder")){
-                    Midfielder midfielder = new Midfielder((String) playerJsonObj.get("name"),new Rating(Integer.parseInt((String) teamsJsonObj.get("offensivRating")) ,Integer.parseInt((String) teamsJsonObj.get("defensivRating"))), (String) playerJsonObj.get("position"));
-                    playerArrayList.add(midfielder);
-                }
-                if(playerJsonObj.get("position").equals("Striker")){
-                    Striker striker = new Striker((String) playerJsonObj.get("name"),new Rating(Integer.parseInt((String) teamsJsonObj.get("offensivRating")) ,Integer.parseInt((String) teamsJsonObj.get("defensivRating"))), (String) playerJsonObj.get("position"));
-                    playerArrayList.add(striker);
-                }
-                else{
-                   // throw new JSONException();
+                String position = (String) playerJsonObj.get("position");
+                switch (position) {
+                    case "Goalkeeper" -> {
+                        Goalkeeper goalkeeper = new Goalkeeper((String) playerJsonObj.get("name"), new Rating(Integer.parseInt((String) teamsJsonObj.get("offensivRating")), Integer.parseInt((String) teamsJsonObj.get("defensivRating"))), (String) playerJsonObj.get("position"));
+                        playerArrayList.add(goalkeeper);
+                    }
+                    case "Defender" -> {
+                        Defender defender = new Defender((String) playerJsonObj.get("name"), new Rating(Integer.parseInt((String) teamsJsonObj.get("offensivRating")), Integer.parseInt((String) teamsJsonObj.get("defensivRating"))), (String) playerJsonObj.get("position"));
+                        playerArrayList.add(defender);
+                    }
+                    case "Midfielder" -> {
+                        Midfielder midfielder = new Midfielder((String) playerJsonObj.get("name"), new Rating(Integer.parseInt((String) teamsJsonObj.get("offensivRating")), Integer.parseInt((String) teamsJsonObj.get("defensivRating"))), (String) playerJsonObj.get("position"));
+                        playerArrayList.add(midfielder);
+                    }
+                    case "Striker" -> {
+                        Striker striker = new Striker((String) playerJsonObj.get("name"), new Rating(Integer.parseInt((String) teamsJsonObj.get("offensivRating")), Integer.parseInt((String) teamsJsonObj.get("defensivRating"))), (String) playerJsonObj.get("position"));
+                        playerArrayList.add(striker);
+                    }
+                    default -> throw new JSONIllegalPlayerPositionException();
                 }
             team.setPlayers(playerArrayList);
             }

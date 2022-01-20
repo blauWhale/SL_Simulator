@@ -1,3 +1,6 @@
+/**
+ * Parent Class of all Player Positions, used as a template
+ */
 public class Player {
     private String name;
     private Rating rating;
