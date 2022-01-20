@@ -12,6 +12,9 @@ public class RandomHelper {
      */
     public int getRandomNumberBetween(int min, int max) {
         Random random = new Random();
+        if(min == 10){
+            return 10;
+        }
         return random.nextInt(max - min) + min;
     }
 
