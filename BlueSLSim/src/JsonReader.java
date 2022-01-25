@@ -22,7 +22,7 @@ public class JsonReader {
      */
     public ArrayList<Team> readJsonFile() {
         JSONParser jsonParser = new JSONParser();
-        try (FileReader reader = new FileReader("./superLeagueTeams.json")) {
+        try (FileReader reader = new FileReader("BlueSLSim/superLeagueTeams.json")) {
             //Read JSON file
             Object obj = jsonParser.parse(reader);
 

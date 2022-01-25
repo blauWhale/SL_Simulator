@@ -61,8 +61,7 @@ Ziel war es die Match Engine umzuschreiben, so dass Spieler gegen Spieler antret
 <br>Die Erweiterung des Simulators wurde zusammen mit Jonas Baars geschrieben.
 
 ## Design
-Bild vom Kickoff Diagram
-
+![Class Diagram Final Product](Diagrams/226b_KickOffClassDiagram.png)
 Als Erstes wurde eine Art Idee-Klassendiagram erstellt. Wichtig war uns die Vererbung darzustellen. Player ist der Parent von dem alle
 Spielerpositionen erben und je nach dem andere Methoden verwenden.
 
@@ -79,9 +78,17 @@ So gab es bei der gegenüberstellung Fehlermeldungen da ein Spieler plötzlich i
 Dank genauem Debugging wurde aber schnell klar was das Problem war.<br>
 
 ## Testing
+Mit den bereits vorhanden Tests vom letzten Modul konnten wir ideal kontrollieren ob wir sauber gearbeitet haben.
+Einige Tests mussten jedoch umgeschrieben werden, angepasst an die umgeschriebenen Klassen. <br>
+Zusätzlich kam lediglich die Testcases für die einzelnen Positionen.
 
 ### Sequence Diagram
+![Class Diagram Final Product](Diagrams/226b_SequenceDiagram.png)
 
 ### Class Diagram of Refactoring/New Classes in "226b"
+![Class Diagram Final Product](Diagrams/226b_ClassDiagramAdded.png)
 
 ## Fazit
+Das Erweitern dieses Projekts war eine Herausforderung. Es machte Spass zu Zweit daran zu arbeiten und die Arbeit aufzuteilen.
+So konnte jeder das machen was er am besten kann. Obwohl von aussen sich nicht viel verändert hat, sind wir stolz auf die 
+schnell Implementation von einzelnen Spielern vs. ganze Mannschaften mit Vererbungen.
