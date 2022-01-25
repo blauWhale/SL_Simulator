@@ -4,6 +4,8 @@ Simulates the Super League<br>
 Der Super League Simulator ist eine Applikation, die alle 10 schweizer Fussballmannschaften
 gegenüberstellt. Mit vorgegebenen Werten wird von den einzelnen Spieltagen bis zur ganzen Season simuliert und dem User ausgegeben.
 
+[Jump to documentation for 226b](#226b---extending-things)
+
 ## Design
 #### Kick Off Class Diagram
 ![KlassenDiagramKickOff](Diagrams/KickOffClassDiagram.png)
