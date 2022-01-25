@@ -2,7 +2,7 @@
  * A Midfielder, Child of Player Class
  */
 public class Midfielder extends Player{
-    RandomHelper randomHelper = new RandomHelper();
+    private RandomHelper randomHelper = new RandomHelper();
 
     public Midfielder(String name, Rating rating, String position) {
         super(name, rating, position);

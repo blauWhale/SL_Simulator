@@ -2,7 +2,7 @@
  * A Striker, Child of Player Class
  */
 public class Striker extends Player {
-    RandomHelper randomHelper = new RandomHelper();
+    private RandomHelper randomHelper = new RandomHelper();
 
     public Striker(String name, Rating rating, String position) {
         super(name, rating, position);
