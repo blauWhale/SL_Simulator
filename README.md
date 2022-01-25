@@ -65,7 +65,9 @@ Ziel war es die Match Engine umzuschreiben, so dass Spieler gegen Spieler antret
 ## Design
 ![Class Diagram Final Product](Diagrams/226b_KickOffClassDiagram.png)
 Als Erstes wurde eine Art Idee-Klassendiagram erstellt. Wichtig war uns die Vererbung darzustellen. Player ist der Parent von dem alle
-Spielerpositionen erben und je nach dem andere Methoden verwenden.
+Spielerpositionen erben und je nach dem andere Methoden verwenden. Ein Interface wird daher nicht verwendet. Jede Position
+hat unterschiedliche Methoden aber teilen über den Parent "Player" Gemeinsamkeiten. So haben wir die Vererbung eingebaut. Die [Use Case](#use-case-diagram) vom
+ersten Teil können so übernommen werden. Nach vorne ändert sich nicht so viel wie im Hintergrund z.B in der Match Engine.
 
 ## Planung & Umsetzung
 Die Planung wurde im Github mit einem Art Kanban Diagram gemacht. So konnten wir bequem Aufgaben verteilen und verfolgen.
@@ -89,6 +91,9 @@ Zusätzlich kam lediglich die Testcases für die einzelnen Positionen.
 
 ### Class Diagram of Refactoring/New Classes in "226b"
 ![Class Diagram Final Product](Diagrams/226b_ClassDiagramAdded.png)
+Für die Erweiterung wurde einiges Refactored und kam neu dazu. Die Veränderungen und neuen Klassen haben wir hier mit draw.io
+abgebildet. Unveränderte Klassen sind im "alten" [Klassendiagramm](#class-diagram-final-product)
+zu finden.
 
 ## Fazit
 Das Erweitern dieses Projekts war eine Herausforderung. Es machte Spass zu Zweit daran zu arbeiten und die Arbeit aufzuteilen.
