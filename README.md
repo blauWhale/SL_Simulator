@@ -52,3 +52,36 @@ Die Test waren Erfolgreich und bestätigten ein sauberes Arbeiten.
 
 ## Fazit
 Die Arbeit an diesem Projekt hat mir grossen Spass bereitet. Besonders das Anpassen der Daten und darauf die Simulation wieder und wieder laufen zu lassen war sehr Spannend.
+
+# 226b - Extending things
+
+Für das Folgemodul 226b wurde der Super League Simulator mit Spieler Klassen erweitert und vererbung wurde eingesetzt.<br>
+Ziel war es die Match Engine umzuschreiben, so dass Spieler gegen Spieler antreten anstatt nur Mannschaften als ganzes.
+
+<br>Die Erweiterung des Simulators wurde zusammen mit Jonas Baars geschrieben.
+
+## Design
+Bild vom Kickoff Diagram
+
+Als Erstes wurde eine Art Idee-Klassendiagram erstellt. Wichtig war uns die Vererbung darzustellen. Player ist der Parent von dem alle
+Spielerpositionen erben und je nach dem andere Methoden verwenden.
+
+## Planung & Umsetzung
+Die Planung wurde im Github mit einem Art Kanban Diagram gemacht. So konnten wir bequem Aufgaben verteilen und verfolgen.
+In der Umsetzung war sicher die grössten zwei Herausforderung das Refactoring des JSONReaders und das Umschreiben der Match Engine.
+<br>
+Beim JSONReader kostete die Verschachtelung von Team und Player viel Zeit. Mit einem Online Tool konnten wir jedoch eine
+gute Vorlage für unseren Reader generieren lassen, das JSON File mit allen Spielern und Mannschafften hatten wir ja bereits schon.
+<br>
+Das Refactoring der Matchengine wurde durch kleine Logikfehler immer wieder in die Länge gezogen worden. Als Beispiel: Die
+involvierten Spieler erhielten zufälligerweise ein Rating Zuwachs oder Minderung vor dem Spiel. Jedoch wurde dies am Anfang nicht wieder am Anfang wieder zurückgesetzt.
+So gab es bei der gegenüberstellung Fehlermeldungen da ein Spieler plötzlich im Rating über dem Maximal Wert 10 lag. <br>
+Dank genauem Debugging wurde aber schnell klar was das Problem war.<br>
+
+## Testing
+
+### Sequence Diagram
+
+### Class Diagram of Refactoring/New Classes in "226b"
+
+## Fazit
