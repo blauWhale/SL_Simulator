@@ -99,3 +99,19 @@ zu finden.
 Das Erweitern dieses Projekts war eine Herausforderung. Es machte Spass zu Zweit daran zu arbeiten und die Arbeit aufzuteilen.
 So konnte jeder das machen was er am besten kann. Obwohl von aussen sich nicht viel verändert hat, sind wir stolz auf die 
 schnell Implementation von einzelnen Spielern vs. ganze Mannschaften mit Vererbungen.
+
+##Genrali ProjektZeit
+-	Ziel und Nutzen der Applikation
+Simulation der Superleague mit so realistische Daten wie möglich (FM, Elo Score) - for fun
+-	UseCases mit Akteuren und System
+-	MVP (Welche Features müssen implementiert werden, damit die Applikation überhaupt ihre Berechtigung hat)
+Ein GUI mit einfacherer Handhabung + FM Attribute pro Spieler
+-	Die Lernziele, die ihr damit erreichen wollt
+Daten visualisieren
+-	Zeitplan mit Meilensteinen
+Ende September erste Version
+-	Eine Aufwandschätzung wie viele Arbeitstage ihr investieren müsst, um das Projekt (oder auch nur das MVP) fertig zu stellen
+5-7 Arbeitstage
+-	Welche Technologien und Framework wollt ihr dazu einsetzen.
+NextJS, Java usw.
+
