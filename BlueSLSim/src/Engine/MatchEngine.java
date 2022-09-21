@@ -1,3 +1,8 @@
+package Engine;
+
+import Helpers.RandomHelper;
+import Model.*;
+
 import java.util.ArrayList;
 
 /**
@@ -8,9 +13,9 @@ public class MatchEngine {
 
     /**
      * Calculates a Match between two Teams and returns the result
-     * @param home Team
-     * @param away Team
-     * @return a game Result
+     * @param home Model.Team
+     * @param away Model.Team
+     * @return a game Model.Result
      */
     public Result calculateMatchDay(Team home, Team away) {
         ArrayList<Player> homeTeamOnDay = new ArrayList<>();
@@ -35,11 +40,11 @@ public class MatchEngine {
 
         for(Player playerOnDay: awayTeamOnDay){
             if (0 == randomHelper.getRandomNumberBetween(0, 2)) {
-                playerOnDay.setRating(new Rating (playerOnDay.getRating().getOffensivRating() - randomHelper.getRandomNumberBetween(-2, +2), playerOnDay.getRating().getDefensivRating() - randomHelper.getRandomNumberBetween(-2, +2)));
+                playerOnDay.setRating(new Rating(playerOnDay.getRating().getOffensivRating() - randomHelper.getRandomNumberBetween(-2, +2), playerOnDay.getRating().getDefensivRating() - randomHelper.getRandomNumberBetween(-2, +2)));
             }
         }
 
-        //Chances Home Team
+        //Chances Home Model.Team
         for (int chances = 0; chances < randomHelper.getRandomNumberBetween(1,6); chances++) {
             boolean homeGoalScored = false;
             Midfielder homeMidfielder = (Midfielder) home.getPlayers().get(randomHelper.getRandomNumberBetween(5,8));
@@ -54,7 +59,7 @@ public class MatchEngine {
             }
         }
 
-        //Chances Away Team
+        //Chances Away Model.Team
         for (int chances = 0; chances < randomHelper.getRandomNumberBetween(0,6); chances++) {
             boolean awayGoalScored = false;
             Midfielder awayMidfielder = (Midfielder) away.getPlayers().get(randomHelper.getRandomNumberBetween(5,8));
@@ -75,7 +80,7 @@ public class MatchEngine {
     }
 
     /**
-     * Awards Points to two Team given a result
+     * Awards Points to two Model.Team given a result
      *
      * @param result
      * @param home

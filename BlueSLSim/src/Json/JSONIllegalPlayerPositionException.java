@@ -1,3 +1,5 @@
+package Json;
+
 /**
  * JSONException class if there is a Typo in the Position in the JSONfile
  */

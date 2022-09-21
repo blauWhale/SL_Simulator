@@ -2,8 +2,7 @@
   "teams": [
     {
       "name": "FC Zürich",
-      "offensivRating": "7",
-      "defensivRating": "5",
+      "elo": "1478",
       "players": [
         {
           "name": "Clair Espinola",
@@ -75,8 +74,7 @@
     },
     {
       "name": "BSC Young Boys",
-      "offensivRating": "7",
-      "defensivRating": "7",
+      "elo": "1651",
       "players": [
         {
           "name": "Dael Ashfield",
@@ -148,8 +146,7 @@
     },
     {
       "name": "FC Basel 1893",
-      "offensivRating": "7",
-      "defensivRating": "6",
+      "elo": "1565",
       "players": [
         {
           "name": "Douglas Woolen",
@@ -221,8 +218,7 @@
     },
     {
       "name": "FC Luzern",
-      "offensivRating": "6",
-      "defensivRating": "6",
+      "elo": "1482",
       "players": [
         {
           "name": "Dame Pover",
@@ -294,8 +290,7 @@
     },
     {
       "name": "FC Sion",
-      "offensivRating": "4",
-      "defensivRating": "4",
+      "elo": "1458",
       "players": [
         {
           "name": "Alexandros Breadon",
@@ -367,8 +362,7 @@
     },
     {
       "name": "Servette FC",
-      "offensivRating": "5",
-      "defensivRating": "5",
+      "elo": "1469",
       "players": [
         {
           "name": "Frederik D'Ugo",
@@ -440,8 +434,7 @@
     },
     {
       "name": "FC St. Gallen",
-      "offensivRating": "4",
-      "defensivRating": "4",
+      "elo": "1527",
       "players": [
         {
           "name": "Phip Arnley",
@@ -512,9 +505,8 @@
       ]
     },
     {
-      "name": "FC Lausanne-Sport",
-      "offensivRating": "3",
-      "defensivRating": "3",
+      "name": "FC Winterthur",
+      "elo": "1326",
       "players": [
         {
           "name": "Dionysus Reisenstein",
@@ -586,8 +578,7 @@
     },
     {
       "name": "FC Lugano",
-      "offensivRating": "4",
-      "defensivRating": "5",
+      "elo": "1455",
       "players": [
         {
           "name": "Brose Chittem",
@@ -659,8 +650,7 @@
     },
     {
       "name": "Grasshopper Club Zürich",
-      "offensivRating": "5",
-      "defensivRating": "6",
+      "elo": "1442",
       "players": [
         {
           "name": "Boycie Antonoczyk",

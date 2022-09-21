@@ -1,11 +1,15 @@
+package Model;
+
+import Model.Team;
+
 import java.util.Comparator;
 
 public class Rule implements Comparator<Team> {
     /** Used to compare to teams and sort them by:
      * 1.Points
      * 2.Goal Difference
-     * @param t1 first Team to compare
-     * @param t2 second Team to compate
+     * @param t1 first Model.Team to compare
+     * @param t2 second Model.Team to compate
      * @return outcome of comparison
      */
     @Override

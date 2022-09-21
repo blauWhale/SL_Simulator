@@ -1,8 +1,14 @@
+package Model;
+
+import org.springframework.stereotype.Component;
+
+import javax.persistence.Entity;
 import java.util.ArrayList;
 
 /**
- * Simple Java Object to host all data for a Team
+ * Simple Java Object to host all data for a Model.Team
  */
+@Component
 public class Team {
 
     private String teamName;

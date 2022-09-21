@@ -1,3 +1,5 @@
+package Model;
+
 /**
  * Simple Java Object to persist a game result
  */

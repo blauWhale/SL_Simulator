@@ -1,5 +1,9 @@
+package Model;
+
+import Helpers.RandomHelper;
+
 /**
- * A Striker, Child of Player Class
+ * A Model.Striker, Child of Model.Player Class
  */
 public class Striker extends Player {
     private RandomHelper randomHelper = new RandomHelper();

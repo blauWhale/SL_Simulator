@@ -1,5 +1,9 @@
+package Model;
+
+import Model.Rating;
+
 /**
- * Parent Class of all Player Positions, used as a template
+ * Parent Class of all Model.Player Positions, used as a template
  */
 public class Player {
     private String name;

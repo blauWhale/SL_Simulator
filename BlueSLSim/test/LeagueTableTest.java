@@ -1,8 +1,7 @@
-import com.sun.jdi.connect.IllegalConnectorArgumentsException;
+import Model.LeagueTable;
+import Model.Team;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class LeagueTableTest {
     LeagueTable leagueTable = new LeagueTable();

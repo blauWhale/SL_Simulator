@@ -1,8 +1,16 @@
+package Model;
+
+import Json.JsonReader;
+import Model.Rule;
+import Model.Team;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 
 /**
  * Used for creating, altering and sorting the league table
  */
+@Component
 public class LeagueTable {
     private ArrayList<Team> listOfTeams = new ArrayList<>();
     private JsonReader jsonReader = new JsonReader();

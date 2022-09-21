@@ -1,5 +1,9 @@
+package Model;
+
+import Helpers.RandomHelper;
+
 /**
- * A Defensive Player, Child of Player Class
+ * A Defensive Model.Player, Child of Model.Player Class
  */
 public class Defender extends Player{
     RandomHelper randomHelper = new RandomHelper();

@@ -1,3 +1,7 @@
+import Engine.MatchEngine;
+import Model.LeagueTable;
+import Model.Team;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -114,7 +118,7 @@ public class Main {
 
     /**
      * Simulates the Super League an X amount of Times after user input
-     * Stops when selected Team won the league
+     * Stops when selected Model.Team won the league
      *
      * @param matchEngine
      * @param leagueTable

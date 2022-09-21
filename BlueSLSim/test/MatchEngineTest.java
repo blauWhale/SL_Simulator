@@ -1,4 +1,5 @@
-import org.junit.Before;
+import Engine.MatchEngine;
+import Model.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,29 +17,29 @@ class MatchEngineTest {
         blueTeam = new Team("Strong FC", new Rating(7, 7));
         redTeam = new Team("Weak United", new Rating(2, 2));
 
-        Midfielder blueMidfielder1 = new Midfielder("Jack Blue", new Rating(9, 9), "Midfielder");
-        Midfielder blueMidfielder2 = new Midfielder("Jack Blue", new Rating(9, 9), "Midfielder");
-        Midfielder blueMidfielder3 = new Midfielder("Jack Blue", new Rating(9, 9), "Midfielder");
-        Midfielder blueMidfielder4 = new Midfielder("Jack Blue", new Rating(9, 9), "Midfielder");
-        Striker blueStriker1 = new Striker("John Blue", new Rating(9, 9), "Striker");
-        Striker blueStriker2 = new Striker("John Blue", new Rating(9, 9), "Striker");
-        Defender blueDefender1 = new Defender("Garry Red", new Rating(9, 9), "Defender");
-        Defender blueDefender2 = new Defender("Garry Red", new Rating(9, 9), "Defender");
-        Defender blueDefender3 = new Defender("Garry Red", new Rating(9, 9), "Defender");
-        Defender blueDefender4 = new Defender("Garry Red", new Rating(9, 9), "Defender");
-        Goalkeeper blueGoalKeeper1 = new Goalkeeper("Tyler Red", new Rating(9, 9), "Goalkeeper");
+        Midfielder blueMidfielder1 = new Midfielder("Jack Blue", new Rating(9, 9), "Model.Midfielder");
+        Midfielder blueMidfielder2 = new Midfielder("Jack Blue", new Rating(9, 9), "Model.Midfielder");
+        Midfielder blueMidfielder3 = new Midfielder("Jack Blue", new Rating(9, 9), "Model.Midfielder");
+        Midfielder blueMidfielder4 = new Midfielder("Jack Blue", new Rating(9, 9), "Model.Midfielder");
+        Striker blueStriker1 = new Striker("John Blue", new Rating(9, 9), "Model.Striker");
+        Striker blueStriker2 = new Striker("John Blue", new Rating(9, 9), "Model.Striker");
+        Defender blueDefender1 = new Defender("Garry Red", new Rating(9, 9), "Model.Defender");
+        Defender blueDefender2 = new Defender("Garry Red", new Rating(9, 9), "Model.Defender");
+        Defender blueDefender3 = new Defender("Garry Red", new Rating(9, 9), "Model.Defender");
+        Defender blueDefender4 = new Defender("Garry Red", new Rating(9, 9), "Model.Defender");
+        Goalkeeper blueGoalKeeper1 = new Goalkeeper("Tyler Red", new Rating(9, 9), "Model.Goalkeeper");
 
-        Midfielder redMidfielder1 = new Midfielder("Jack Blue", new Rating(2, 2), "Midfielder");
-        Midfielder redMidfielder2 = new Midfielder("Jack Blue", new Rating(2, 2), "Midfielder");
-        Midfielder redMidfielder3 = new Midfielder("Jack Blue", new Rating(2, 2), "Midfielder");
-        Midfielder redMidfielder4 = new Midfielder("Jack Blue", new Rating(2, 2), "Midfielder");
-        Striker redStriker1 = new Striker("John Blue", new Rating(2, 2), "Striker");
-        Striker redStriker2 = new Striker("John Blue", new Rating(2, 2), "Striker");
-        Defender redDefender1 = new Defender("Garry Red", new Rating(2, 2), "Defender");
-        Defender redDefender2 = new Defender("Garry Red", new Rating(2, 2), "Defender");
-        Defender redDefender3 = new Defender("Garry Red", new Rating(2, 2), "Defender");
-        Defender redDefender4 = new Defender("Garry Red", new Rating(2, 2), "Defender");
-        Goalkeeper redGoalKeeper1 = new Goalkeeper("Tyler Red", new Rating(2, 2), "Goalkeeper");
+        Midfielder redMidfielder1 = new Midfielder("Jack Blue", new Rating(2, 2), "Model.Midfielder");
+        Midfielder redMidfielder2 = new Midfielder("Jack Blue", new Rating(2, 2), "Model.Midfielder");
+        Midfielder redMidfielder3 = new Midfielder("Jack Blue", new Rating(2, 2), "Model.Midfielder");
+        Midfielder redMidfielder4 = new Midfielder("Jack Blue", new Rating(2, 2), "Model.Midfielder");
+        Striker redStriker1 = new Striker("John Blue", new Rating(2, 2), "Model.Striker");
+        Striker redStriker2 = new Striker("John Blue", new Rating(2, 2), "Model.Striker");
+        Defender redDefender1 = new Defender("Garry Red", new Rating(2, 2), "Model.Defender");
+        Defender redDefender2 = new Defender("Garry Red", new Rating(2, 2), "Model.Defender");
+        Defender redDefender3 = new Defender("Garry Red", new Rating(2, 2), "Model.Defender");
+        Defender redDefender4 = new Defender("Garry Red", new Rating(2, 2), "Model.Defender");
+        Goalkeeper redGoalKeeper1 = new Goalkeeper("Tyler Red", new Rating(2, 2), "Model.Goalkeeper");
         ArrayList<Player> blueTeamPlayers = new ArrayList<>();
         ArrayList<Player> redTeamPlayers = new ArrayList<>();
 
