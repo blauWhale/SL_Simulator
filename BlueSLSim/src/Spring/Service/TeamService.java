@@ -28,7 +28,14 @@ public class TeamService {
     @CrossOrigin(origins = "http://localhost:3000/")
     public ArrayList<Team> getSeasonCalc() {
         leagueTable.createLeague();
-       return playRound(matchEngine,leagueTable);
+       return leagueTable.sortLeagueTable(playRound(matchEngine,leagueTable));
+    }
+
+    @GetMapping(value = "/teams/sim-elo")
+    @CrossOrigin(origins = "http://localhost:3000/")
+    public ArrayList<Team> getSeasonCalcElo() {
+        leagueTable.createLeague();
+        return leagueTable.sortLeagueTable(playRoundElo(matchEngine,leagueTable));
     }
 
     @GetMapping(value = "/team/{id}/rating")
@@ -53,17 +60,33 @@ public class TeamService {
                     if (i == j) {
                         //skip
                     } else {
-                        matchEngine.calculateMatchDay(superLeagueTeams.get(i), superLeagueTeams.get(j));
+                        matchEngine.calculateMatchDayPlayers(superLeagueTeams.get(i), superLeagueTeams.get(j));
                     }
 
                 }
 
             }
         }
-
         return (superLeagueTeams);
     }
 
+    private static ArrayList<Team> playRoundElo(MatchEngine matchEngine, LeagueTable leagueTable) {
+        ArrayList<Team> superLeagueTeams = leagueTable.getListOfTeams();
+        for (int amountOfRounds = 0; amountOfRounds < 2; amountOfRounds++) {
+            for (int i = 0; i <= superLeagueTeams.size() - 1; i++) {
+                for (int j = 0; j <= superLeagueTeams.size() - 1; j++) {
+                    if (i == j) {
+                        //skip
+                    } else {
+                        matchEngine.calculateMatchDayElo(superLeagueTeams.get(i), superLeagueTeams.get(j));
+                    }
+
+                }
+
+            }
+        }
+        return (superLeagueTeams);
+    }
 
 
 }

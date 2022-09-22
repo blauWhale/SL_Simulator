@@ -8,7 +8,6 @@ import java.util.ArrayList;
 /**
  * Simple Java Object to host all data for a Model.Team
  */
-@Component
 public class Team {
 
     private String teamName;

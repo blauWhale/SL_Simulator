@@ -17,7 +17,7 @@ public class MatchEngine {
      * @param away Model.Team
      * @return a game Model.Result
      */
-    public Result calculateMatchDay(Team home, Team away) {
+    public Result calculateMatchDayPlayers(Team home, Team away) {
         ArrayList<Player> homeTeamOnDay = new ArrayList<>();
         for(Player homePlayer: home.getPlayers()){
             homeTeamOnDay.add(new Player(homePlayer.getName(),homePlayer.getRating(),homePlayer.getPosition()));
@@ -68,6 +68,46 @@ public class MatchEngine {
             Goalkeeper homeGoalkeeper = (Goalkeeper) home.getPlayers().get(0);
             if((awayMidfielder.pass(homeDefender.getRating()))){
                 awayGoalScored = awayStriker.scoreGoal(homeGoalkeeper.getRating());
+            }
+            if (awayGoalScored) {
+                awayGoals++;
+            }
+        }
+
+        Result result = new Result(homeGoals, awayGoals);
+        awardPoints(result, home, away);
+        return result;
+    }
+    public Result calculateMatchDayElo(Team home, Team away) {
+        int homeGoals = 0;
+        int awayGoals = 0;
+        if (0 == randomHelper.getRandomNumberBetween(0, 2)) {
+                home.setRating(new Rating (home.getRating().getElo() - randomHelper.getRandomNumberBetween(-20, +20)));
+        }
+
+
+
+        if (0 == randomHelper.getRandomNumberBetween(0, 2)) {
+                away.setRating(new Rating(away.getRating().getElo() - randomHelper.getRandomNumberBetween(-20, +20)));
+        }
+
+
+        //Chances Home Model.Team
+        for (int chances = 0; chances < randomHelper.getRandomNumberBetween(1,6); chances++) {
+            boolean homeGoalScored = false;
+            if(home.getRating().getElo()>away.getRating().getElo()){
+                homeGoalScored =true;
+            }
+            if (homeGoalScored) {
+                homeGoals++;
+            }
+        }
+
+        //Chances Away Model.Team
+        for (int chances = 0; chances < randomHelper.getRandomNumberBetween(0,6); chances++) {
+            boolean awayGoalScored = false;
+            if(away.getRating().getElo()>home.getRating().getElo()){
+                awayGoalScored =true;
             }
             if (awayGoalScored) {
                 awayGoals++;

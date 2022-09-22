@@ -105,7 +105,7 @@ public class Main {
                     if (i == j) {
                         //skip
                     } else {
-                        matchEngine.calculateMatchDay(superLeagueTeams.get(i), superLeagueTeams.get(j));
+                        matchEngine.calculateMatchDayPlayers(superLeagueTeams.get(i), superLeagueTeams.get(j));
                     }
 
                 }
