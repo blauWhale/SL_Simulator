@@ -5,69 +5,58 @@
       "elo": "1478",
       "players": [
         {
-          "name": "Clair Espinola",
-          "offensivRating": "7",
-          "defensivRating": "5",
+          "name": "Yanick Brecher",
+          "fmRating": "58",
           "position": "Goalkeeper"
         },
         {
-          "name": "Kerwinn Breslauer",
-          "offensivRating": "7",
-          "defensivRating": "5",
+          "name": "Karol Mets",
+          "fmRating": "57",
           "position": "Defender"
         },
         {
-          "name": "Traver Benardet",
-          "offensivRating": "7",
-          "defensivRating": "5",
+          "name": "Becir Omeragic",
+          "fmRating": "59",
           "position": "Defender"
         },
         {
-          "name": "Paton Apperley",
-          "offensivRating": "7",
-          "defensivRating": "5",
+          "name": "Lindrit Kamberi",
+          "fmRating": "51",
           "position": "Defender"
         },
         {
-          "name": "Gill O'Corrane",
-          "offensivRating": "7",
-          "defensivRating": "5",
+          "name": "Mirlind Kryeziu",
+          "fmRating": "56",
           "position": "Defender"
         },
         {
-          "name": "Johan Benjamin",
-          "offensivRating": "7",
-          "defensivRating": "5",
+          "name": "Ole Selnaes",
+          "fmRating": "63",
           "position": "Midfielder"
         },
         {
-          "name": "Red Kusick",
-          "offensivRating": "7",
-          "defensivRating": "5",
+          "name": "Blerim Dzemaili",
+          "fmRating": "57",
           "position": "Midfielder"
         },
         {
-          "name": "Laney Josovich",
-          "offensivRating": "7",
-          "defensivRating": "5",
+          "name": "Cheick Conde",
+          "fmRating": "42",
           "position": "Midfielder"
         },
         {
-          "name": "Raff Lammenga",
-          "offensivRating": "7",
-          "defensivRating": "5",
+          "name": "Bledian Krasniqi",
+          "fmRating": "55",
           "position": "Midfielder"
         },
         {
-          "name": "Bronson Garraway",
-          "offensivRating": "7",
-          "defensivRating": "5",
+          "name": "Tosin Aiyegun",
+          "fmRating": "61",
           "position": "Striker"
         },
         {
-          "name": "Northrup Dignam",
-          "offensivRating": "7",
-          "defensivRating": "5",
+          "name": "Bogdan V'Yunnik",
+          "fmRating": "50",
           "position": "Striker"
         }
       ]
@@ -77,69 +66,58 @@
       "elo": "1651",
       "players": [
         {
-          "name": "Dael Ashfield",
-          "offensivRating": "7",
-          "defensivRating": "7",
+          "name": "David von Ballmoos",
+          "fmRating": "65",
           "position": "Goalkeeper"
         },
         {
-          "name": "Anatole Kinnard",
-          "offensivRating": "7",
-          "defensivRating": "7",
+          "name": "Loris Benito",
+          "fmRating": "65",
           "position": "Defender"
         },
         {
-          "name": "Howey Crosthwaite",
-          "offensivRating": "7",
-          "defensivRating": "7",
+          "name": "Fabian Lustenberger",
+          "fmRating": "65",
           "position": "Defender"
         },
         {
-          "name": "Clark Orritt",
-          "offensivRating": "7",
-          "defensivRating": "7",
+          "name": "Mohamed Camara",
+          "fmRating": "64",
           "position": "Defender"
         },
         {
-          "name": "Ody Ghest",
-          "offensivRating": "7",
-          "defensivRating": "7",
+          "name": "Cedric Zesiger",
+          "fmRating": "65",
           "position": "Defender"
         },
         {
-          "name": "Sully Miller",
-          "offensivRating": "7",
-          "defensivRating": "7",
+          "name": "Fabian Rieder",
+          "fmRating": "54",
           "position": "Midfielder"
         },
         {
-          "name": "Stu Gandrich",
-          "offensivRating": "7",
-          "defensivRating": "7",
+          "name": "Filip Ugrinic",
+          "fmRating": "63",
           "position": "Midfielder"
         },
         {
-          "name": "Ty Stille",
-          "offensivRating": "7",
-          "defensivRating": "7",
+          "name": "Cheikh Niasse",
+          "fmRating": "58",
           "position": "Midfielder"
         },
         {
-          "name": "Kiel Jameson",
-          "offensivRating": "7",
-          "defensivRating": "7",
+          "name": "Vincent Sierro",
+          "fmRating": "61",
           "position": "Midfielder"
         },
         {
-          "name": "Joachim Widdall",
-          "offensivRating": "7",
-          "defensivRating": "7",
+          "name": "Jean-Pierre Nsame",
+          "fmRating": "69",
           "position": "Striker"
         },
         {
-          "name": "Willie Dominka",
-          "offensivRating": "7",
-          "defensivRating": "7",
+          "name": "Cédric Itten",
+          "fmRating": "62",
           "position": "Striker"
         }
       ]
@@ -149,69 +127,58 @@
       "elo": "1565",
       "players": [
         {
-          "name": "Douglas Woolen",
-          "offensivRating": "7",
-          "defensivRating": "6",
+          "name": "Marwin Hitz",
+          "fmRating": "69",
           "position": "Goalkeeper"
         },
         {
-          "name": "Anders Treske",
-          "offensivRating": "7",
-          "defensivRating": "6",
+          "name": "Sergio López",
+          "fmRating": "57",
           "position": "Defender"
         },
         {
-          "name": "Berkie Streader",
-          "offensivRating": "7",
-          "defensivRating": "6",
+          "name": "Arnau Comas",
+          "fmRating": "58",
           "position": "Defender"
         },
         {
-          "name": "Rey Gilluley",
-          "offensivRating": "7",
-          "defensivRating": "6",
+          "name": "Michael Lang",
+          "fmRating": "64",
           "position": "Defender"
         },
         {
-          "name": "Abby Cayley",
-          "offensivRating": "7",
-          "defensivRating": "6",
+          "name": "Kasim Adams",
+          "fmRating": "63",
           "position": "Defender"
         },
         {
-          "name": "Gib Crecy",
-          "offensivRating": "7",
-          "defensivRating": "6",
+          "name": "Dan Ndoye",
+          "fmRating": "59",
           "position": "Midfielder"
         },
         {
-          "name": "Birk Tomasek",
-          "offensivRating": "7",
-          "defensivRating": "6",
+          "name": "Taulant Xhaka",
+          "fmRating": "62",
           "position": "Midfielder"
         },
         {
-          "name": "Lon Yakuntzov",
-          "offensivRating": "7",
-          "defensivRating": "6",
+          "name": "Wouter Burger",
+          "fmRating": "55",
           "position": "Midfielder"
         },
         {
-          "name": "Tanny McCard",
-          "offensivRating": "7",
-          "defensivRating": "6",
+          "name": "Fabian Frei",
+          "fmRating": "64",
           "position": "Midfielder"
         },
         {
-          "name": "Cobb Vashchenko",
-          "offensivRating": "7",
-          "defensivRating": "6",
+          "name": "Jean-Kévin Augustin",
+          "fmRating": "61",
           "position": "Striker"
         },
         {
-          "name": "Powell Cammocke",
-          "offensivRating": "7",
-          "defensivRating": "6",
+          "name": "Andi Zeqiri",
+          "fmRating": "64",
           "position": "Striker"
         }
       ]
@@ -221,69 +188,58 @@
       "elo": "1482",
       "players": [
         {
-          "name": "Dame Pover",
-          "offensivRating": "6",
-          "defensivRating": "6",
+          "name": "Marius Müller",
+          "fmRating": "63",
           "position": "Goalkeeper"
         },
         {
-          "name": "Jeremie Lambourne",
-          "offensivRating": "6",
-          "defensivRating": "6",
+          "name": "Marco Burch",
+          "fmRating": "56",
           "position": "Defender"
         },
         {
-          "name": "Greggory Kyles",
-          "offensivRating": "6",
-          "defensivRating": "6",
+          "name": "Mohamed Dräger",
+          "fmRating": "55",
           "position": "Defender"
         },
         {
-          "name": "Lamont Tabb",
-          "offensivRating": "6",
-          "defensivRating": "6",
+          "name": "Martin Frýdek",
+          "fmRating": "61",
           "position": "Defender"
         },
         {
-          "name": "Holden Saggs",
-          "offensivRating": "6",
-          "defensivRating": "6",
+          "name": "Denis Simani",
+          "fmRating": "52",
           "position": "Defender"
         },
         {
-          "name": "Lorrie Priestland",
-          "offensivRating": "6",
-          "defensivRating": "6",
+          "name": "Max Meyer",
+          "fmRating": "64",
           "position": "Midfielder"
         },
         {
-          "name": "Denney Farmiloe",
-          "offensivRating": "6",
-          "defensivRating": "6",
+          "name": "Christian Gentner",
+          "fmRating": "64",
           "position": "Midfielder"
         },
         {
-          "name": "Jdavie Breen",
-          "offensivRating": "6",
-          "defensivRating": "6",
+          "name": "Sofyan Chader",
+          "fmRating": "53",
           "position": "Midfielder"
         },
         {
-          "name": "Bastien Shotbolt",
-          "offensivRating": "6",
-          "defensivRating": "6",
+          "name": "Pius Dorn",
+          "fmRating": "52",
           "position": "Midfielder"
         },
         {
-          "name": "Flynn Prinett",
-          "offensivRating": "6",
-          "defensivRating": "6",
+          "name": "Asumah Abubakar",
+          "fmRating": "59",
           "position": "Striker"
         },
         {
-          "name": "Say Diglin",
-          "offensivRating": "6",
-          "defensivRating": "6",
+          "name": "Dejan Sorgić",
+          "fmRating": "55",
           "position": "Striker"
         }
       ]
@@ -293,69 +249,58 @@
       "elo": "1458",
       "players": [
         {
-          "name": "Alexandros Breadon",
-          "offensivRating": "4",
-          "defensivRating": "4",
+          "name": "Heinz Lindner",
+          "fmRating": "65",
           "position": "Goalkeeper"
         },
         {
-          "name": "Bruno Denisovich",
-          "offensivRating": "4",
-          "defensivRating": "4",
+          "name": "Nathanaël Saintini",
+          "fmRating": "48",
           "position": "Defender"
         },
         {
-          "name": "Ruprecht Cowitz",
-          "offensivRating": "4",
-          "defensivRating": "4",
+          "name": "Dimitri Cavaré",
+          "fmRating": "55",
           "position": "Defender"
         },
         {
-          "name": "Moe Leyre",
-          "offensivRating": "4",
-          "defensivRating": "4",
+          "name": "Joel Schmied",
+          "fmRating": "53",
           "position": "Defender"
         },
         {
-          "name": "Esteban Wragge",
-          "offensivRating": "4",
-          "defensivRating": "4",
+          "name": "Dennis Iapichino",
+          "fmRating": "56",
           "position": "Defender"
         },
         {
-          "name": "Darrin Humphery",
-          "offensivRating": "4",
-          "defensivRating": "4",
+          "name": "Anto Grgić",
+          "fmRating": "58",
           "position": "Midfielder"
         },
         {
-          "name": "Arlen Frere",
-          "offensivRating": "4",
-          "defensivRating": "4",
+          "name": "Denis-Will Poha",
+          "fmRating": "58",
           "position": "Midfielder"
         },
         {
-          "name": "Bald Cagan",
-          "offensivRating": "4",
-          "defensivRating": "4",
+          "name": "Ylyas Chouaref",
+          "fmRating": "56",
           "position": "Midfielder"
         },
         {
-          "name": "Waverly Renney",
-          "offensivRating": "4",
-          "defensivRating": "4",
+          "name": "Musa Araz",
+          "fmRating": "55",
           "position": "Midfielder"
         },
         {
-          "name": "Caspar Banisch",
-          "offensivRating": "4",
-          "defensivRating": "4",
+          "name": "Filip Stojilković",
+          "fmRating": "55",
           "position": "Striker"
         },
         {
-          "name": "Arlan Imort",
-          "offensivRating": "4",
-          "defensivRating": "4",
+          "name": "Itaitinga",
+          "fmRating": "51",
           "position": "Striker"
         }
       ]
@@ -365,69 +310,58 @@
       "elo": "1469",
       "players": [
         {
-          "name": "Frederik D'Ugo",
-          "offensivRating": "5",
-          "defensivRating": "5",
+          "name": "Jeremy Frick",
+          "fmRating": "61",
           "position": "Goalkeeper"
         },
         {
-          "name": "Hermann MacIntyre",
-          "offensivRating": "5",
-          "defensivRating": "5",
+          "name": "Steve Rouiller",
+          "fmRating": "61",
           "position": "Defender"
         },
         {
-          "name": "Harp Plowell",
-          "offensivRating": "5",
-          "defensivRating": "5",
+          "name": "Yoan Severin",
+          "fmRating": "53",
           "position": "Defender"
         },
         {
-          "name": "Archy Hawford",
-          "offensivRating": "5",
-          "defensivRating": "5",
+          "name": "Moussa Diallo",
+          "fmRating": "50",
           "position": "Defender"
         },
         {
-          "name": "Sim Dunan",
-          "offensivRating": "5",
-          "defensivRating": "5",
+          "name": "Gaël Clichy",
+          "fmRating": "62",
           "position": "Defender"
         },
         {
-          "name": "Nevins Olifaunt",
-          "offensivRating": "5",
-          "defensivRating": "5",
+          "name": "Timothé Cognat",
+          "fmRating": "62",
           "position": "Midfielder"
         },
         {
-          "name": "Reg Mourant",
-          "offensivRating": "5",
-          "defensivRating": "5",
+          "name": "Patrick Pflücke",
+          "fmRating": "56",
           "position": "Midfielder"
         },
         {
-          "name": "Leonardo Hallut",
-          "offensivRating": "5",
-          "defensivRating": "5",
+          "name": "David Douline",
+          "fmRating": "54",
           "position": "Midfielder"
         },
         {
-          "name": "Lester Nudd",
-          "offensivRating": "5",
-          "defensivRating": "5",
+          "name": "Theo Valls",
+          "fmRating": "61",
           "position": "Midfielder"
         },
         {
-          "name": "Ely Gilley",
-          "offensivRating": "5",
-          "defensivRating": "5",
+          "name": "Enzo Crivelli",
+          "fmRating": "63",
           "position": "Striker"
         },
         {
-          "name": "Lincoln Tollerfield",
-          "offensivRating": "5",
-          "defensivRating": "5",
+          "name": "Miroslav Stevanović",
+          "fmRating": "63",
           "position": "Striker"
         }
       ]
@@ -439,67 +373,78 @@
         {
           "name": "Phip Arnley",
           "offensivRating": "4",
-          "defensivRating": "4",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Goalkeeper"
         },
         {
           "name": "Farris Tunsley",
           "offensivRating": "4",
-          "defensivRating": "4",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Defender"
         },
         {
           "name": "Armand Cozins",
           "offensivRating": "4",
-          "defensivRating": "4",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Defender"
         },
         {
           "name": "Ignacio Esome",
           "offensivRating": "4",
-          "defensivRating": "4",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Defender"
         },
         {
           "name": "Thaine Bucksey",
           "offensivRating": "4",
-          "defensivRating": "4",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Defender"
         },
         {
           "name": "Hardy Ryam",
           "offensivRating": "4",
-          "defensivRating": "4",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Midfielder"
         },
         {
           "name": "Layton Le Provest",
           "offensivRating": "4",
-          "defensivRating": "4",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Midfielder"
         },
         {
           "name": "Jabez Mathou",
           "offensivRating": "4",
-          "defensivRating": "4",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Midfielder"
         },
         {
           "name": "Finley Beaushaw",
           "offensivRating": "4",
-          "defensivRating": "4",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Midfielder"
         },
         {
           "name": "Gabriello Jaan",
           "offensivRating": "4",
-          "defensivRating": "4",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Striker"
         },
         {
           "name": "Quill Palfery",
           "offensivRating": "4",
-          "defensivRating": "4",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Striker"
         }
       ]
@@ -511,67 +456,78 @@
         {
           "name": "Dionysus Reisenstein",
           "offensivRating": "3",
-          "defensivRating": "3",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Goalkeeper"
         },
         {
           "name": "Jean Bickerstaffe",
           "offensivRating": "3",
-          "defensivRating": "3",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Defender"
         },
         {
           "name": "Federico Eger",
           "offensivRating": "3",
-          "defensivRating": "3",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Defender"
         },
         {
           "name": "Penrod Dabney",
           "offensivRating": "3",
-          "defensivRating": "3",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Defender"
         },
         {
           "name": "Trumaine Bousler",
           "offensivRating": "3",
-          "defensivRating": "3",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Defender"
         },
         {
           "name": "Sherlock Simmonds",
           "offensivRating": "3",
-          "defensivRating": "3",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Midfielder"
         },
         {
           "name": "Paton Beckinsale",
           "offensivRating": "3",
-          "defensivRating": "3",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Midfielder"
         },
         {
           "name": "Immanuel Muro",
           "offensivRating": "3",
-          "defensivRating": "3",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Midfielder"
         },
         {
           "name": "Ced Le Brom",
           "offensivRating": "3",
-          "defensivRating": "3",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Midfielder"
         },
         {
           "name": "Sky Levine",
           "offensivRating": "3",
-          "defensivRating": "3",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Striker"
         },
         {
           "name": "Arnaldo Berdale",
           "offensivRating": "3",
-          "defensivRating": "3",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Striker"
         }
       ]
@@ -583,67 +539,78 @@
         {
           "name": "Brose Chittem",
           "offensivRating": "4",
-          "defensivRating": "5",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Goalkeeper"
         },
         {
           "name": "Finlay Murdie",
           "offensivRating": "4",
-          "defensivRating": "5",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Defender"
         },
         {
           "name": "Lazarus Faier",
           "offensivRating": "4",
-          "defensivRating": "5",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Defender"
         },
         {
           "name": "Rowen Roskrug",
           "offensivRating": "4",
-          "defensivRating": "5",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Defender"
         },
         {
           "name": "Allard Keller",
           "offensivRating": "4",
-          "defensivRating": "5",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Defender"
         },
         {
           "name": "Gray Pengilly",
           "offensivRating": "4",
-          "defensivRating": "5",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Midfielder"
         },
         {
           "name": "Nikita Duffus",
           "offensivRating": "4",
-          "defensivRating": "5",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Midfielder"
         },
         {
           "name": "Judah Prinnett",
           "offensivRating": "4",
-          "defensivRating": "5",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Midfielder"
         },
         {
           "name": "Parrnell Normington",
           "offensivRating": "4",
-          "defensivRating": "5",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Midfielder"
         },
         {
           "name": "Dom Rielly",
           "offensivRating": "4",
-          "defensivRating": "5",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Striker"
         },
         {
           "name": "Stephan Giacomello",
           "offensivRating": "4",
-          "defensivRating": "5",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Striker"
         }
       ]
@@ -655,67 +622,78 @@
         {
           "name": "Boycie Antonoczyk",
           "offensivRating": "5",
-          "defensivRating": "6",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Goalkeeper"
         },
         {
           "name": "Lazaro Gorriessen",
           "offensivRating": "5",
-          "defensivRating": "6",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Defender"
         },
         {
           "name": "Tony Peoples",
           "offensivRating": "5",
-          "defensivRating": "6",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Defender"
         },
         {
           "name": "Yves Server",
           "offensivRating": "5",
-          "defensivRating": "6",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Defender"
         },
         {
           "name": "Adolpho Pleasaunce",
           "offensivRating": "5",
-          "defensivRating": "6",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Defender"
         },
         {
           "name": "Bradley Buddle",
           "offensivRating": "5",
-          "defensivRating": "6",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Midfielder"
         },
         {
           "name": "Anatole Poschel",
           "offensivRating": "5",
-          "defensivRating": "6",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Midfielder"
         },
         {
           "name": "Oswell Bandt",
           "offensivRating": "5",
-          "defensivRating": "6",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Midfielder"
         },
         {
           "name": "Lawrence Vanichev",
           "offensivRating": "5",
-          "defensivRating": "6",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Midfielder"
         },
         {
           "name": "Patten Kuhnt",
           "offensivRating": "5",
-          "defensivRating": "6",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Striker"
         },
         {
           "name": "Winfred Lovewell",
           "offensivRating": "5",
-          "defensivRating": "6",
+         "defensivRating": "6",
+          "fmRating": "6",
           "position": "Striker"
         }
       ]
