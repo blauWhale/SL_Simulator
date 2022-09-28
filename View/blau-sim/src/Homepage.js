@@ -17,6 +17,7 @@ function Homepage() {
             try {
                 const response = await axios.get('http://localhost:8080/teams/sim-elo');
                 setData(response.data)
+                console.log(response.data)
             } catch (error) {
                 console.error(error);
             }
@@ -72,7 +73,7 @@ function Homepage() {
                                         <tr className="bg-white border-b">
                                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{index+1}</td>
                                             <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                {teams.teamName}
+                                                {teams.name}
                                             </td>
                                             <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                 {teams.games}

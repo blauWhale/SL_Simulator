@@ -12,12 +12,14 @@ public class Goalkeeper extends Player{
         super(name, rating, position);
     }
 
+    public Goalkeeper(){}
+
     /**
      * Methode to determine if a save was successful
      * @return boolean if save was success
      */
     public boolean save(){
-        return this.getRating().getDefensivRating() >= 5;
+        return this.getRating().getFmRating() >= 5;
     }
 
     /**
@@ -25,6 +27,6 @@ public class Goalkeeper extends Player{
      * @return boolean if intercept was success
      */
     public boolean intercept(){
-        return this.getRating().getDefensivRating() >= 6;
+        return this.getRating().getFmRating() >= 6;
     }
 }

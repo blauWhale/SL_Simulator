@@ -53,7 +53,7 @@ public class TeamService {
     }
 
     private static ArrayList<Team> playRound(MatchEngine matchEngine, LeagueTable leagueTable) {
-        ArrayList<Team> superLeagueTeams = leagueTable.getListOfTeams();
+        ArrayList<Team> superLeagueTeams = leagueTable.getTeams();
         for (int amountOfRounds = 0; amountOfRounds < 2; amountOfRounds++) {
             for (int i = 0; i <= superLeagueTeams.size() - 1; i++) {
                 for (int j = 0; j <= superLeagueTeams.size() - 1; j++) {
@@ -71,7 +71,7 @@ public class TeamService {
     }
 
     private static ArrayList<Team> playRoundElo(MatchEngine matchEngine, LeagueTable leagueTable) {
-        ArrayList<Team> superLeagueTeams = leagueTable.getListOfTeams();
+        ArrayList<Team> superLeagueTeams = leagueTable.getTeams();
         for (int amountOfRounds = 0; amountOfRounds < 2; amountOfRounds++) {
             for (int i = 0; i <= superLeagueTeams.size() - 1; i++) {
                 for (int j = 0; j <= superLeagueTeams.size() - 1; j++) {

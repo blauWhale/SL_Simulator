@@ -33,12 +33,12 @@ public class Main {
         ArrayList<Team> superLeagueTeams = leagueTable.createLeague();
         System.out.println("Choose your team:");
         for (int teamNumber = 0; teamNumber < superLeagueTeams.size(); teamNumber++) {
-            System.out.println("[" + (teamNumber) + "] " + superLeagueTeams.get(teamNumber).getTeamName().toString());
+            System.out.println("[" + (teamNumber) + "] " + superLeagueTeams.get(teamNumber).getName().toString());
         }
         String team;
         try {
             String input = scanner.nextLine();
-            team = superLeagueTeams.get(Integer.parseInt(input)).getTeamName();
+            team = superLeagueTeams.get(Integer.parseInt(input)).getName();
             System.out.println("You chose " + team);
         } catch (IndexOutOfBoundsException e) {
             throw new MenuException("Choose one of the teams listed (0-9)");
@@ -81,9 +81,9 @@ public class Main {
         leagueTable.createLeague();
         leagueTable.showLeagueTable(playRound(matchEngine, leagueTable));
         int placement = 0;
-        for (int i = 0; i < leagueTable.getListOfTeams().size(); i++) {
-            if (leagueTable.getListOfTeams().get(i).getTeamName().equals(team)) {
-                placement = leagueTable.getListOfTeams().indexOf(leagueTable.getListOfTeams().get(i)) + 1;
+        for (int i = 0; i < leagueTable.getTeams().size(); i++) {
+            if (leagueTable.getTeams().get(i).getName().equals(team)) {
+                placement = leagueTable.getTeams().indexOf(leagueTable.getTeams().get(i)) + 1;
             }
         }
         System.out.println(team + " placed " + placement + ".");
@@ -98,7 +98,7 @@ public class Main {
      * @return an altered Arraylist of Teams, after an completed season
      */
     private static ArrayList<Team> playRound(MatchEngine matchEngine, LeagueTable leagueTable) {
-        ArrayList<Team> superLeagueTeams = leagueTable.getListOfTeams();
+        ArrayList<Team> superLeagueTeams = leagueTable.getTeams();
         for (int amountOfRounds = 0; amountOfRounds < 2; amountOfRounds++) {
             for (int i = 0; i <= superLeagueTeams.size() - 1; i++) {
                 for (int j = 0; j <= superLeagueTeams.size() - 1; j++) {
@@ -133,8 +133,8 @@ public class Main {
         for (int i = 0; i < amount; i++) {
             leagueTable.createLeague();
             leagueTable.sortLeagueTable(playRound(matchEngine, leagueTable));
-            if (leagueTable.getListOfTeams().get(0).getTeamName().equals(team)) {
-                leagueTable.showLeagueTable(leagueTable.getListOfTeams());
+            if (leagueTable.getTeams().get(0).getName().equals(team)) {
+                leagueTable.showLeagueTable(leagueTable.getTeams());
                 System.out.println("It took " + counter + " seasons to win the league");
                 winner = true;
                 break;
@@ -144,7 +144,7 @@ public class Main {
         }
         if (!winner) {
             System.out.println("The league table in year " + counter);
-            leagueTable.showLeagueTable(leagueTable.getListOfTeams());
+            leagueTable.showLeagueTable(leagueTable.getTeams());
             System.out.println("Even after " + counter + " years, " + team + " didn't win the league!");
         }
 

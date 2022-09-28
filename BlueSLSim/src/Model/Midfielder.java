@@ -11,6 +11,8 @@ public class Midfielder extends Player{
     public Midfielder(String name, Rating rating, String position) {
         super(name, rating, position);
     }
+    public Midfielder() {
+    }
 
     /**
      * A Methode to determine if a pass was successful
@@ -18,7 +20,7 @@ public class Midfielder extends Player{
      * @return if pass was successful
      */
     public boolean pass(Rating opponentRating){
-        return randomHelper.getRandomNumberBetween(this.getRating().getOffensivRating(), 10) >= randomHelper.getRandomNumberBetween(opponentRating.getDefensivRating(), 10);
+        return randomHelper.getRandomNumberBetween(this.getRating().getFmRating(), 100) >= randomHelper.getRandomNumberBetween(opponentRating.getFmRating(), 100);
     }
 
     /**
@@ -26,6 +28,6 @@ public class Midfielder extends Player{
      * @return if tackle was successful
      */
     public boolean tackle(){
-        return this.getRating().getDefensivRating() >= 6;
+        return this.getRating().getFmRating() >= 6;
     }
 }

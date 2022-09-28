@@ -1,9 +1,6 @@
 package Model;
 
 import Json.JsonReader;
-import Model.Rule;
-import Model.Team;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
@@ -11,16 +8,16 @@ import java.util.ArrayList;
  * Used for creating, altering and sorting the league table
  */
 public class LeagueTable {
-    private ArrayList<Team> listOfTeams = new ArrayList<>();
+    private ArrayList<Team> teams = new ArrayList<>();
     private JsonReader jsonReader = new JsonReader();
     /**
      * Reads a JSON File of Teams and creates a league for them
      * @return Empty Super League Table
      */
     public ArrayList<Team> createLeague(){
-        listOfTeams.removeAll(listOfTeams);
-        listOfTeams = jsonReader.readJsonFile();
-        return listOfTeams;
+        teams.removeAll(teams);
+        teams = jsonReader.scanJson();
+        return teams;
     }
 
     /**
@@ -45,11 +42,11 @@ public class LeagueTable {
         }
     }
 
-    public ArrayList<Team> getListOfTeams() {
-        return listOfTeams;
+    public ArrayList<Team> getTeams() {
+        return teams;
     }
 
-    public void setListOfTeams(ArrayList<Team> listOfTeams) {
-        this.listOfTeams = listOfTeams;
+    public void setTeams(ArrayList<Team> teams) {
+        this.teams = teams;
     }
 }

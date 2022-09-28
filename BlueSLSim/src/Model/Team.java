@@ -1,8 +1,5 @@
 package Model;
 
-import org.springframework.stereotype.Component;
-
-import javax.persistence.Entity;
 import java.util.ArrayList;
 
 /**
@@ -10,7 +7,7 @@ import java.util.ArrayList;
  */
 public class Team {
 
-    private String teamName;
+    private String name;
     private Rating rating;
     private Integer points;
     private int goalsScored;
@@ -22,8 +19,8 @@ public class Team {
     private ArrayList<Player> players;
 
 
-    public Team(String teamName, Rating rating) {
-        this.teamName = teamName;
+    public Team(String name, Rating rating) {
+        this.name = name;
         this.rating = rating;
         this.points = 0;
         this.goalsScored =0;
@@ -34,12 +31,22 @@ public class Team {
         this.games = 0;
     }
 
-    public String getTeamName() {
-        return teamName;
+    public Team(){
+        this.points = 0;
+        this.goalsScored =0;
+        this.goalsConceded = 0;
+        this.wins = 0;
+        this.draws = 0;
+        this.loses = 0;
+        this.games = 0;
     }
 
-    public void setTeamName(String teamName) {
-        this.teamName = teamName;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Rating getRating() {
@@ -120,7 +127,7 @@ public class Team {
 
     @Override
     public String toString() {
-        return teamName + " |" + "Games: "+games+" | "+"Points: " +points + " | " + goalsScored +":"+goalsConceded + " | " + (goalsScored-goalsConceded) + " | " +  "W"+wins+"D"+draws+"L"+loses;
+        return name + " |" + "Games: "+games+" | "+"Points: " +points + " | " + goalsScored +":"+goalsConceded + " | " + (goalsScored-goalsConceded) + " | " +  "W"+wins+"D"+draws+"L"+loses;
     }
 
 }

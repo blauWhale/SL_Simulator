@@ -11,6 +11,8 @@ public class Striker extends Player {
     public Striker(String name, Rating rating, String position) {
         super(name, rating, position);
     }
+    public Striker() {
+    }
 
     /**
      * A Methode to determine if a Goal was scored
@@ -18,7 +20,7 @@ public class Striker extends Player {
      * @return if goal was scored
      */
     public boolean scoreGoal(Rating opponentRating) {
-        return randomHelper.getRandomNumberBetween(this.getRating().getOffensivRating(), 10) >= randomHelper.getRandomNumberBetween(opponentRating.getDefensivRating(), 10);
+        return randomHelper.getRandomNumberBetween(this.getRating().getFmRating(), 100) >= randomHelper.getRandomNumberBetween(opponentRating.getFmRating(), 100);
 
     }
     /**
@@ -26,6 +28,6 @@ public class Striker extends Player {
      * @return if dribble was successful
      */
     public boolean dribble() {
-        return this.getRating().getOffensivRating() >= 6;
+        return this.getRating().getFmRating() >= 6;
     }
 }

@@ -11,13 +11,15 @@ public class Defender extends Player{
     public Defender(String name, Rating rating, String position) {
         super(name, rating, position);
     }
+    public Defender() {
+    }
 
     /**
      * Methode to determin if a tackle was sucessful
      * @return boolean if tackle was success
      */
     public boolean tackle(){
-        return this.getRating().getDefensivRating() >= 5;
+        return this.getRating().getFmRating() >= 5;
     }
 
     /**
@@ -25,6 +27,6 @@ public class Defender extends Player{
      * @return boolean if intercept was success
      */
     public boolean intercept(){
-        return this.getRating().getDefensivRating() >= 6;
+        return this.getRating().getFmRating() >= 6;
     }
 }

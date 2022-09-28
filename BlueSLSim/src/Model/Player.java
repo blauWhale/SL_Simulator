@@ -1,10 +1,22 @@
 package Model;
 
 import Model.Rating;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
  * Parent Class of all Model.Player Positions, used as a template
  */
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "position")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Goalkeeper.class, name = "Goalkeeper"),
+        @JsonSubTypes.Type(value = Defender.class, name = "Defender"),
+        @JsonSubTypes.Type(value = Midfielder.class, name = "Midfielder"),
+        @JsonSubTypes.Type(value = Striker.class, name = "Striker"),
+})
 public class Player {
     private String name;
     private Rating rating;
@@ -14,6 +26,10 @@ public class Player {
         this.name = name;
         this.rating = rating;
         this.position = position;
+    }
+
+    public Player(){
+
     }
 
     public String getName() {

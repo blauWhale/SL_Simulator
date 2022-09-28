@@ -34,13 +34,13 @@ public class MatchEngine {
 
         for(Player playerOnDay: homeTeamOnDay){
             if (0 == randomHelper.getRandomNumberBetween(0, 2)) {
-                playerOnDay.setRating(new Rating (playerOnDay.getRating().getOffensivRating() - randomHelper.getRandomNumberBetween(-2, +2), playerOnDay.getRating().getDefensivRating() - randomHelper.getRandomNumberBetween(-2, +2)));
+                playerOnDay.setRating(new Rating (playerOnDay.getRating().getFmRating() - randomHelper.getRandomNumberBetween(-2, +2)));
             }
         }
 
         for(Player playerOnDay: awayTeamOnDay){
             if (0 == randomHelper.getRandomNumberBetween(0, 2)) {
-                playerOnDay.setRating(new Rating(playerOnDay.getRating().getOffensivRating() - randomHelper.getRandomNumberBetween(-2, +2), playerOnDay.getRating().getDefensivRating() - randomHelper.getRandomNumberBetween(-2, +2)));
+                playerOnDay.setRating(new Rating(playerOnDay.getRating().getFmRating() - randomHelper.getRandomNumberBetween(-2, +2)));
             }
         }
 
@@ -82,13 +82,17 @@ public class MatchEngine {
         int homeGoals = 0;
         int awayGoals = 0;
         if (0 == randomHelper.getRandomNumberBetween(0, 2)) {
-                home.setRating(new Rating (home.getRating().getElo() - randomHelper.getRandomNumberBetween(-20, +20)));
+            Rating rating = new Rating();
+            rating.setElo(home.getRating().getElo() - randomHelper.getRandomNumberBetween(-20, +20));
+            home.setRating(rating);
         }
 
 
 
         if (0 == randomHelper.getRandomNumberBetween(0, 2)) {
-                away.setRating(new Rating(away.getRating().getElo() - randomHelper.getRandomNumberBetween(-20, +20)));
+            Rating rating = new Rating();
+            rating.setElo(away.getRating().getElo() - randomHelper.getRandomNumberBetween(-20, +20));
+            away.setRating(rating);
         }
 
 
