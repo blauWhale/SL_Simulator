@@ -34,13 +34,13 @@ public class MatchEngine {
 
         for(Player playerOnDay: homeTeamOnDay){
             if (0 == randomHelper.getRandomNumberBetween(0, 2)) {
-                playerOnDay.setRating(new Rating (playerOnDay.getRating().getFmRating() - randomHelper.getRandomNumberBetween(-2, +2)));
+                playerOnDay.setRating(new Rating (playerOnDay.getRating().getFmRating() - randomHelper.getRandomNumberBetween(-5, +5)));
             }
         }
 
         for(Player playerOnDay: awayTeamOnDay){
             if (0 == randomHelper.getRandomNumberBetween(0, 2)) {
-                playerOnDay.setRating(new Rating(playerOnDay.getRating().getFmRating() - randomHelper.getRandomNumberBetween(-2, +2)));
+                playerOnDay.setRating(new Rating(playerOnDay.getRating().getFmRating() - randomHelper.getRandomNumberBetween(-5, +5)));
             }
         }
 

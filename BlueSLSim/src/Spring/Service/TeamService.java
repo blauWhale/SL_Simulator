@@ -8,6 +8,7 @@ import Model.Team;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 @RestController
@@ -15,13 +16,12 @@ public class TeamService {
 
     private LeagueTable leagueTable = new LeagueTable();
     private MatchEngine matchEngine = new MatchEngine();
-    private ArrayList<Team> listOfTeams = leagueTable.createLeague();
 
 
     @GetMapping(value = "/teams")
     @CrossOrigin(origins = "http://localhost:3000/")
     public ArrayList<Team> getTeams() {
-        return listOfTeams;
+        return leagueTable.createLeague();
     }
 
     @GetMapping(value = "/teams/sim")
@@ -41,8 +41,22 @@ public class TeamService {
     @GetMapping(value = "/team/{id}/rating")
     @CrossOrigin(origins = "http://localhost:3000/")
     public Rating getRating(@PathVariable int id) {
-        return listOfTeams.get(id).getRating();
+        return leagueTable.createLeague().get(id).getRating();
     }
+
+    @GetMapping(value = "/teams/sim/{amount}")
+    @CrossOrigin(origins = "http://localhost:3000/")
+    public ArrayList<Team> getSeasonCalcXAmount(@PathVariable int amount) {
+        ArrayList<Team> winners = new ArrayList<>();
+        for (int i = 0; i < amount; i++) {
+            leagueTable.createLeague();
+            leagueTable.sortLeagueTable(playRound(matchEngine, leagueTable));
+            winners.add(leagueTable.getTeams().get(0));
+        }
+        return winners;
+    }
+
+
 
 
 
