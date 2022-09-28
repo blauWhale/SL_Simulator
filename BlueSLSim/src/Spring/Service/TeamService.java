@@ -3,6 +3,7 @@ package Spring.Service;
 
 import Engine.MatchEngine;
 import Model.LeagueTable;
+import Model.Player;
 import Model.Rating;
 import Model.Team;
 import org.springframework.web.bind.annotation.*;
@@ -55,6 +56,18 @@ public class TeamService {
         }
         return winners;
     }
+
+    @GetMapping(value = "/players")
+    @CrossOrigin(origins = "http://localhost:3000/")
+    public ArrayList<Player> getPlayers() {
+        ArrayList<Player> bestPlayers = new ArrayList<>();
+        for(Team team:leagueTable.createLeague()){
+            bestPlayers.addAll(team.getPlayers());
+        }
+        return bestPlayers;
+    }
+
+
 
 
 

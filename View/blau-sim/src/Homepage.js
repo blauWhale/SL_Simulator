@@ -5,6 +5,7 @@ function Homepage() {
 
     const [data, setData] = useState([])
     const [teams, setTeams] = useState([])
+    const [bestPlayers, setBestPlayers] = useState([])
 
     async function simOnce() {
         try {
@@ -33,16 +34,20 @@ function Homepage() {
     }
 
     useEffect(() => {
-        // declare the data fetching function
         const fetchData = async () => {
             const response = await axios.get('http://localhost:8080/teams')
-            console.log(response.data)
-            setTeams(response.data.sort((a, b) => (b.rating.elo) - (a.rating.elo))
-        )
+            setTeams(response.data.sort((a, b) => (b.rating.elo) - (a.rating.elo)))
         }
-        // call the function
         fetchData()
-            // make sure to catch any error
+            .catch(console.error);
+    }, [])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await axios.get('http://localhost:8080/players')
+            setBestPlayers(response.data.sort((a, b) => (b.rating.fmRating) - (a.rating.fmRating)))
+        }
+        fetchData()
             .catch(console.error);
     }, [])
 
@@ -52,13 +57,13 @@ function Homepage() {
             <button className={"bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"} onClick={simXAmount}>Simulate 100x</button>
             <button className={"bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"} onClick={simOnceElo}>Simulate 1x (Elo)</button>
 
-            <div className="flex flex-col items-start">
-                <h2>Simulation Table</h2>
+            <div className="flex flex-wrap items-start">
             <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div className="py-4 inline-block w-full sm:px-6 lg:px-8">
                     <div className="overflow-hidden">
                         <table className="w-full text-center">
                             <thead className="border-b bg-gray-800">
+                            <div className={"text-white"}>Sim Table</div>
                             <tr>
                                 <th scope="col" className="text-sm font-medium text-white px-6 py-4">
                                     #
@@ -134,44 +139,86 @@ function Homepage() {
 
                             </tbody>
                         </table>
+
                     </div>
+
                 </div>
+
             </div>
-                <table className="justify-start text-center">
-                    <thead className="border-b bg-gray-800">
-                    <tr>
-                        <th scope="col" className="text-sm font-medium text-white px-6 py-4">
-                            #
-                        </th>
-                        <th scope="col" className="text-sm font-medium text-white px-6 py-4">
-                            Team
-                        </th>
-                        <th scope="col" className="text-sm font-medium text-white px-6 py-4">
-                            Elo Score
-                        </th>
-                    </tr>
-                    </thead >
-                    <tbody>
-                    {teams?.map((teams,index)=>{
-                        return(
-                            <>
-                                <tr className="bg-white border-b">
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{index+1}</td>
-                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        {teams.name}
-                                    </td>
-                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        {teams.rating.elo}
-                                    </td>
-                                </tr>
-                            </>
+                <div className="py-4 sm:px-6 lg:px-8">
+                    <table className="w-full text-center">
+                        <thead className="border-b bg-gray-800">
+                        <div className={"text-white"}>Elo Table</div>
+                        <tr>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4">
+                                #
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4">
+                                Team
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4">
+                                Elo Score
+                            </th>
+                        </tr>
+                        </thead >
+                        <tbody>
+                        {teams?.map((teams,index)=>{
+                            return(
+                                <>
+                                    <tr className="bg-white border-b">
+                                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{index+1}</td>
+                                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                            {teams.name}
+                                        </td>
+                                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                            {teams.rating.elo}
+                                        </td>
+                                    </tr>
+                                </>
 
-                        )
+                            )
 
-                    })}
-                    </tbody>
-                </table>
+                        })}
+                        </tbody>
+                    </table>
+                </div>
+                <div className="py-4 sm:px-6 lg:px-8">
+                    <table className="w-full text-center">
+                        <thead className="border-b bg-gray-800">
+                        <div className={"text-white"}>Player Table</div>
+                        <tr>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4">
+                                #
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4">
+                                Player
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4">
+                                FM Rating
+                            </th>
+                        </tr>
+                        </thead >
+                        <tbody>
+                        {bestPlayers?.map((player,index)=>{
+                            return(
+                                <>
+                                    <tr className="bg-white border-b">
+                                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{index+1}</td>
+                                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                            {player.name}
+                                        </td>
+                                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                            {player.rating.fmRating}
+                                        </td>
+                                    </tr>
+                                </>
 
+                            )
+
+                        })}
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
         </>
