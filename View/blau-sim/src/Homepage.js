@@ -37,6 +37,7 @@ function Homepage() {
         const fetchData = async () => {
             const response = await axios.get('http://localhost:8080/teams')
             setTeams(response.data.sort((a, b) => (b.rating.elo) - (a.rating.elo)))
+
         }
         fetchData()
             .catch(console.error);
@@ -101,7 +102,7 @@ function Homepage() {
                             {data.map((teams,index)=>{
                                 return(
                                     <>
-                                        <tr className="bg-white border-b">
+                                        <tr className="bg-gray-100 border-b">
                                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{index+1}</td>
                                             <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                 {teams.name}
@@ -165,13 +166,54 @@ function Homepage() {
                         {teams?.map((teams,index)=>{
                             return(
                                 <>
-                                    <tr className="bg-white border-b">
+                                    <tr className="bg-gray-100 border-b">
                                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{index+1}</td>
                                         <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                             {teams.name}
                                         </td>
                                         <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                             {teams.rating.elo}
+                                        </td>
+                                    </tr>
+                                </>
+
+                            )
+
+                        })}
+                        </tbody>
+                    </table>
+                </div>
+                <div className="py-4 sm:px-6 lg:px-8">
+                    <table className="w-full text-center">
+                        <thead className="border-b bg-gray-800">
+                        <div className={"text-white"}>Player Table</div>
+                        <tr>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4">
+                                #
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4">
+                                Team
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4">
+                                FM Rating Average
+                            </th>
+                        </tr>
+                        </thead >
+                        <tbody>
+                        {teams?.map((team,index)=>{
+                            let sum = 0
+                            team.players.map(player => (
+                                sum+=player.rating.fmRating
+                            ))
+                            return(
+                                <>
+                                    <tr className="bg-gray-100 border-b">
+                                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{index+1}</td>
+                                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                            {team.name}
+                                        </td>
+                                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                            {(sum/team.players.length).toFixed(1)}
                                         </td>
                                     </tr>
                                 </>
@@ -202,7 +244,7 @@ function Homepage() {
                         {bestPlayers?.map((player,index)=>{
                             return(
                                 <>
-                                    <tr className="bg-white border-b">
+                                    <tr className="bg-gray-100 border-b">
                                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{index+1}</td>
                                         <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                             {player.name}
