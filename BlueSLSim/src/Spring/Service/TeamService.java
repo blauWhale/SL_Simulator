@@ -39,10 +39,10 @@ public class TeamService {
         return leagueTable.sortLeagueTable(playRoundElo(matchEngine,leagueTable));
     }
 
-    @GetMapping(value = "/team/{id}/rating")
+    @GetMapping(value = "/team/{id}")
     @CrossOrigin(origins = "http://localhost:3000/")
-    public Rating getRating(@PathVariable int id) {
-        return leagueTable.createLeague().get(id).getRating();
+    public Team getTeam(@PathVariable int id)    {
+        return leagueTable.createLeague().get(id);
     }
 
     @GetMapping(value = "/teams/sim/{amount}")

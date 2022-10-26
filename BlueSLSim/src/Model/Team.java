@@ -7,6 +7,7 @@ import java.util.ArrayList;
  */
 public class Team {
 
+    private int id;
     private String name;
     private Rating rating;
     private Integer points;
@@ -39,6 +40,14 @@ public class Team {
         this.draws = 0;
         this.loses = 0;
         this.games = 0;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

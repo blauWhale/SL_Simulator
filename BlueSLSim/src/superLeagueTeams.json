@@ -1,6 +1,7 @@
 {
   "teams": [
     {
+      "id": 0,
       "name": "FC Zürich",
       "rating": {
         "elo": 1478
@@ -86,6 +87,7 @@
       ]
     },
     {
+      "id": 1,
       "name": "BSC Young Boys",
       "rating": {
         "elo": 1651
@@ -171,6 +173,7 @@
       ]
     },
     {
+      "id": 2,
       "name": "FC Basel 1893",
       "rating": {
         "elo": 1565
@@ -256,6 +259,7 @@
       ]
     },
     {
+      "id": 3,
       "name": "FC Luzern",
       "rating": {
         "elo": 1482
@@ -341,6 +345,7 @@
       ]
     },
     {
+      "id": 4,
       "name": "FC Sion",
       "rating": {
         "elo": 1458
@@ -426,6 +431,7 @@
       ]
     },
     {
+      "id": 5,
       "name": "Servette FC",
       "rating": {
         "elo": 1469
@@ -511,6 +517,7 @@
       ]
     },
     {
+      "id": 6,
       "name": "FC St. Gallen",
       "rating": {
         "elo": 1527
@@ -596,6 +603,7 @@
       ]
     },
     {
+      "id": 7,
       "name": "FC Winterthur",
       "rating": {
         "elo": 1326
@@ -681,6 +689,7 @@
       ]
     },
     {
+      "id": 8,
       "name": "FC Lugano",
       "rating": {
         "elo": 1455
@@ -766,6 +775,7 @@
       ]
     },
     {
+      "id": 9,
       "name": "Grasshopper Club Zürich",
       "rating": {
         "elo": 1442
