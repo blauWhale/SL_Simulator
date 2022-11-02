@@ -115,3 +115,5 @@ Ende September erste Version
 -	Welche Technologien und Framework wollt ihr dazu einsetzen. <br>
 NextJS, Java usw.
 
+![Screenshot Generali](Screenshot%20Generali.png)
+
